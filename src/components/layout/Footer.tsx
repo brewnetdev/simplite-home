@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div style={{ marginBottom: 14 }}>
-              <Image src="/assets/simplite-logo.svg" alt="Simplite" width={120} height={60} style={{ height: 32, width: 'auto' }} />
+              <Image src="/assets/simplite-logo-nav.svg" alt="Simplite" width={360} height={100} style={{ height: 32, width: 'auto' }} />
             </div>
             <p style={{ fontSize: 13, maxWidth: 320, lineHeight: 1.6, color: 'var(--ink-muted)' }}>
               {t('desc')}
@@ -57,9 +57,7 @@ export default function Footer() {
           <div>
             <h4>{t('contact')}</h4>
             <ul>
-              <li><a href="mailto:hello@simplite.net">hello@simplite.net</a></li>
-              <li><a href="mailto:sales@simplite.net">sales@simplite.net</a></li>
-              <li><a href="mailto:dev@simplite.net">dev@simplite.net</a></li>
+              <li><a href="mailto:brewnet.dev@gmail.com">brewnet.dev@gmail.com</a></li>
             </ul>
           </div>
         </div>
