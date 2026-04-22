@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simplite. — 쉽게 쓰고, 효율적으로 관리하세요</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Tweaks panel */
+#tweaksPanel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 200;
+  width: 380px; background: #fff; border: 1px solid var(--green);
+  border-radius: 14px; padding: 18px 18px 16px;
+  box-shadow: 0 20px 50px -10px rgba(26,58,46,0.25);
+  font-family: var(--font-sans); display: none;
+}
+#tweaksPanel.show { display: block; }
+#tweaksPanel h5 { font-family: var(--font-serif); font-style: italic; color: var(--green); font-size: 20px; margin-bottom: 4px; font-weight: 400; }
+#tweaksPanel .tk-sub { font-family: var(--font-mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+#tweaksPanel .tk-row { margin-bottom: 14px; }
+#tweaksPanel .tk-row label { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); margin-bottom: 6px; }
+#tweaksPanel .tk-row label .v { font-family: var(--font-mono); color: var(--green); }
+#tweaksPanel input[type=range] { width: 100%; accent-color: var(--green); }
+#tweaksPanel .tk-actions { display: flex; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line-soft); }
+#tweaksPanel .tk-actions button { flex: 1; padding: 6px 10px; font-size: 11px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-soft); background: #fff; }
+#tweaksPanel .tk-actions button.primary { background: var(--green); color: #fff; border-color: var(--green); }
+</style>
+<style>
+/* ===== HERO ===== */
+.hero { padding: 72px 0 40px; position: relative; overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.hero h1 { margin: 24px 0 28px; }
+.hero h1 .em { font-style: italic; color: var(--green); }
+.hero h1 .rust { color: var(--rust); font-style: normal; }
+.hero-sub { font-size: 17px; color: var(--ink-soft); max-width: 540px; line-height: 1.65; margin-bottom: 36px; }
+.hero-ctas { display: flex; gap: 12px; align-items: center; margin-bottom: 40px; }
+.hero-meta { display: flex; gap: 28px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--green-accent); box-shadow: 0 0 0 0 var(--green-accent); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(74,138,110,0.5)} 50%{box-shadow:0 0 0 6px rgba(74,138,110,0)} }
+
+.hero-stack { position: relative; height: 560px; }
+.hero-card {
+  position: absolute;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.hero-card.tika {
+  top: 40px; right: 0; width: 92%;
+  transform: rotate(-2deg);
+  border-color: rgba(26,58,46,0.2);
+}
+.hero-card.mark {
+  top: 200px; left: 0; width: 78%;
+  transform: rotate(1.5deg);
+  z-index: 2;
+}
+.hero-stack:hover .hero-card.tika { transform: rotate(0deg) translateY(-8px); }
+.hero-stack:hover .hero-card.mark { transform: rotate(0deg) translateY(-8px); }
+.hero-card .cap {
+  position: absolute; bottom: 10px; left: 12px;
+  font-family: var(--font-mono); font-size: 10px;
+  background: rgba(255,255,255,0.95); color: var(--green);
+  padding: 4px 8px; border-radius: 4px; border: 1px solid var(--line);
+}
+.hero-card img { width: 100%; height: auto; display: block; }
+
+@media (max-width: 1000px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stack { height: 480px; margin-top: 40px; }
+}
+
+/* ===== PHILOSOPHY ===== */
+.philosophy {
+  background: var(--green);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 96px 72px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+.philosophy::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+.philosophy .eyebrow { color: #a8c4b4; position: relative; z-index: 1; }
+.philosophy .eyebrow::before { background: #a8c4b4; }
+.philosophy h2 { color: #fff; font-size: clamp(40px, 5vw, 72px); max-width: 920px; margin-top: 20px; position: relative; z-index: 1; }
+.philosophy h2 em { color: var(--sand); font-style: italic; }
+.philosophy .kr { font-size: 18px; color: #c9d8cf; max-width: 620px; margin-top: 32px; line-height: 1.7; position: relative; z-index: 1; }
+.philosophy .pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.12);
+  margin-top: 72px; border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; overflow: hidden;
+  position: relative; z-index: 1;
+}
+.pillar { background: var(--green); padding: 32px; }
+.pillar .no { font-family: var(--font-mono); color: var(--sand); font-size: 11px; margin-bottom: 12px; letter-spacing: 0.1em; }
+.pillar h4 { font-family: var(--font-serif); font-size: 26px; color: #fff; margin-bottom: 10px; font-weight: 400; }
+.pillar p { color: #c9d8cf; font-size: 14px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .philosophy { padding: 56px 32px; }
+  .philosophy .pillars { grid-template-columns: 1fr; }
+}
+
+/* ===== PRODUCT SHOWCASE ===== */
+.product {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+  padding: 48px 0;
+  align-items: center;
+}
+.product.reverse { grid-template-areas: "img copy"; }
+.product.reverse .product-copy { grid-area: copy; }
+.product.reverse .product-visual { grid-area: img; }
+
+.product-copy .product-mark {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px;
+}
+.product-mark .glyph {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 26px;
+  font-style: italic;
+}
+.product-mark .glyph.tika { background: var(--green); color: #fff; }
+.product-mark .glyph.mark { background: #fff; color: var(--green); border: 1px solid var(--green); }
+.product-mark .name { font-family: var(--font-serif); font-size: 32px; color: var(--green); }
+.product-mark .tag { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.product-copy .ptitle { font-family: var(--font-sans); font-size: 36px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 20px; }
+.product-copy .ptitle em { color: var(--green); font-style: normal; background: linear-gradient(transparent 65%, var(--green-soft) 65%); padding: 0 2px; }
+.product-copy .pdesc { font-size: 16px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
+.product-copy .plist { list-style: none; margin-bottom: 32px; }
+.product-copy .plist li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--line-soft); font-size: 14px; color: var(--ink-soft); }
+.product-copy .plist li:last-child { border-bottom: 0; }
+.product-copy .plist li .k { font-family: var(--font-mono); color: var(--green); font-size: 11px; min-width: 90px; padding-top: 3px; }
+.product-copy .plist li strong { color: var(--ink); font-weight: 600; margin-right: 6px; }
+.product-copy .pcta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.product-visual { position: relative; }
+.product-visual .win { transform: rotate(-1deg); transition: transform .4s; }
+.product-visual:hover .win { transform: rotate(0deg); }
+.product-visual .accent {
+  position: absolute; inset: -20px; z-index: -1;
+  background: var(--green-soft); border-radius: 24px;
+  transform: rotate(2deg);
+}
+.product.reverse .product-visual .win { transform: rotate(1deg); }
+.product.reverse .product-visual:hover .win { transform: rotate(0); }
+.product.reverse .product-visual .accent { background: var(--cream); transform: rotate(-2deg); }
+
+@media (max-width: 960px) {
+  .product, .product.reverse { grid-template-columns: 1fr; grid-template-areas: none; gap: 40px; }
+}
+
+/* ===== WHY ===== */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.problem {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  position: relative;
+  transition: all .3s;
+}
+.problem:hover { border-color: var(--green); transform: translateY(-4px); }
+.problem .no { font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.14em; }
+.problem .bad { font-family: var(--font-serif); font-size: 22px; color: var(--rust); margin: 16px 0 12px; font-style: italic; line-height: 1.3; }
+.problem .arrow { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); margin: 16px 0 10px; }
+.problem .good { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+.problem .good strong { color: var(--green); font-weight: 600; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* ===== ENTERPRISE ===== */
+.ent {
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 80px 56px;
+  position: relative; overflow: hidden;
+}
+.ent::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(26,58,46,0.35) 100%);
+  pointer-events: none;
+}
+.ent-head { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 56px; position: relative; }
+.ent-head .eyebrow { color: var(--green-accent); }
+.ent-head .eyebrow::before { background: var(--green-accent); }
+.ent-head h2 { color: #fff; }
+.ent-head h2 em { color: var(--sand); font-style: italic; }
+.ent-head .desc { color: #c9d0cc; font-size: 15px; line-height: 1.7; }
+.ent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative; }
+.ent-cell { background: var(--ink); padding: 28px; }
+.ent-cell .icn {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.ent-cell .icn svg { width: 18px; height: 18px; stroke: var(--sand); fill: none; stroke-width: 1.5; }
+.ent-cell h4 { font-family: var(--font-sans); font-weight: 600; color: #fff; font-size: 16px; margin-bottom: 8px; }
+.ent-cell p { color: #a8b2ac; font-size: 13px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .ent { padding: 56px 32px; }
+  .ent-head { grid-template-columns: 1fr; gap: 24px; }
+  .ent-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== PRICING ===== */
+.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  background: #fff;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.plan.feat {
+  border: 1.5px solid var(--green);
+  background: linear-gradient(180deg, #fff 0%, var(--green-soft) 100%);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.plan .pname { font-family: var(--font-serif); font-size: 30px; color: var(--green); font-style: italic; margin-bottom: 4px; }
+.plan .ptier { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
+.plan .pprice { font-family: var(--font-serif); font-size: 48px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.plan .pprice small { font-size: 14px; color: var(--ink-muted); font-family: var(--font-sans); }
+.plan .pnote { font-size: 13px; color: var(--ink-muted); margin-bottom: 28px; }
+.plan ul { list-style: none; margin-bottom: 28px; flex: 1; }
+.plan ul li { padding: 8px 0; font-size: 14px; color: var(--ink-soft); display: flex; gap: 10px; align-items: flex-start; }
+.plan ul li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 8px; flex-shrink: 0; }
+.plan ul li.off { color: var(--ink-faint); }
+.plan ul li.off::before { background: var(--ink-faint); }
+.plan .pbadge {
+  position: absolute; top: -12px; right: 24px;
+  background: var(--rust); color: #fff;
+  font-family: var(--font-mono); font-size: 10px;
+  padding: 4px 10px; border-radius: 999px; letter-spacing: 0.1em;
+}
+@media (max-width: 900px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .plan.feat { transform: none; }
+}
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 860px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 24px 0;
+  cursor: pointer;
+}
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--ink); }
+.faq-q .plus { font-family: var(--font-mono); color: var(--green); font-size: 20px; transition: transform .3s; flex-shrink: 0; }
+.faq-a { color: var(--ink-soft); font-size: 14px; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, margin .35s ease; padding-right: 40px; }
+.faq-item.open .faq-a { max-height: 400px; margin-top: 16px; }
+.faq-item.open .plus { transform: rotate(45deg); }
+
+/* ===== CTA FINAL ===== */
+.final {
+  text-align: center;
+  padding: 120px 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--bg);
+}
+.final h2 { font-size: clamp(48px, 6vw, 84px); margin-bottom: 24px; }
+.final h2 em { color: var(--green); font-style: italic; }
+.final p { font-size: 17px; color: var(--ink-soft); margin-bottom: 36px; }
+.final-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== LOGO STRIP ===== */
+.logo-strip {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 0; gap: 40px; flex-wrap: wrap;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand" data-screen-label="brand"><span class="mark"></span>Simplite<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="tika.html">Tika</a>
+      <a href="markflow.html">MarkFlow</a>
+      <a href="#enterprise">Enterprise</a>
+      <a href="#pricing">가격</a>
+      <a href="contact.html">문의</a>
+    </div>
+    <div class="nav-cta">
+      <div class="lang-toggle" id="langToggle">
+        <button class="active" data-lang="ko">KO</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="https://github.com/claude-code-expert" class="btn btn-ghost" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" style="font-family: Pretendard;">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="reveal" style="font-family: Pretendard;">
+        <span class="eyebrow">Simplite Suite · 2026</span>
+        <h1>
+          <span class="em">Simply</span><span class="rust">.</span><br>
+          Thoughtfully<br>
+          managed.
+        </h1>
+        <p class="hero-sub">
+          <strong>쉽게 쓰고, 효율적으로 관리하세요.</strong><br>
+          따로 배울 필요가 없는 직관적인 지식·업무 관리 도구. <br>
+          Simplite는 AI·MCP 네이티브로 설계된 오픈소스 SaaS 제품군입니다.
+        </p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn btn-primary">제품 둘러보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn-ghost">도입 문의</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="pulse"></span>Apache 2.0 OSS</span>
+          <span>MCP NATIVE</span>
+          <span>ON-PREMISE READY</span>
+        </div>
+      </div>
+
+      <div class="hero-stack reveal">
+        <div class="hero-card tika">
+          <img src="assets/tika-landing.png" alt="Tika landing">
+          <div class="cap">TIKA · Plan Simply. Ship Boldly.</div>
+        </div>
+        <div class="hero-card mark">
+          <img src="assets/mark-document-map.png" alt="MarkFlow document map">
+          <div class="cap">MARKFLOW · Markdown Knowledge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="logo-strip">
+    <span>● Open Source</span>
+    <span>Apache 2.0 License</span>
+    <span>MCP Native</span>
+    <span>AI Agent Ready</span>
+    <span>On-Premise Compliant</span>
+    <span>SSO / RBAC</span>
+  </div>
+</div>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section>
+  <div class="container">
+    <div class="philosophy" style="font-family: 'Noto Serif KR';">
+      <span class="eyebrow">Philosophy</span>
+      <h2>Tools should disappear <em>into</em> the work.<br>Not <em>become</em> it.</h2>
+      <p class="kr" style="width: 8000px;">도구를 배우는 데 시간을 쓰지 않아야 합니다. Simplite는 당신이 원래 하려던 일 — 생각하고, 쓰고, 결정하고, 배포하는 일 — 에만 집중하도록 만들어졌습니다. 단순함은 제약이 아니라, 가장 어려운 설계의 결과입니다.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="no">01 / SIMPLICITY</div>
+          <h4>따로 배울 필요 없이</h4>
+          <p>처음 여는 사람도 5분 안에 자기 흐름을 찾을 수 있어야 합니다. Simplite의 모든 제품은 1페이지 매뉴얼 원칙 위에서 설계됩니다.</p>
+        </div>
+        <div class="pillar">
+          <div class="no">02 / OPENNESS</div>
+          <h4>열려 있는 기본값</h4>
+          <p>코어 기능은 Apache 2.0으로 공개되어, 직접 수정·자가호스팅·상업적 이용까지 자유롭습니다. 잠금이 아니라 신뢰로 시작합니다.</p>
+        </div>
+        <div class="pillar">
+          <div class="no">03 / AI-NATIVE</div>
+          <h4>MCP와 에이전트 위에서</h4>
+          <p>모든 데이터와 업무 단위는 MCP 네이티브로 구조화되어, 당신의 에이전트와 업무 흐름에 자연스럽게 연결됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products" style="padding-top: 40px;">
+  <div class="container">
+    <div class="section-head" style="width: 1100px;">
+      <div class="title">
+        <span class="eyebrow">Products · 2 of N</span>
+        <h2 class="kr-h2" style="margin-top:12px;">Simplite가 만든 <span style="color:var(--green);">두 가지 도구</span>.<br>더 많은 제품이 곧 합류합니다.</h2>
+      </div>
+      <div class="aside" style="width: 400px;">지식과 업무는 연결되어 있습니다. 우리는 그 두 축을 각각 Tika와 MarkFlow로 분리해 구축하고, 함께 쓸 때 완성되도록 설계합니다.</div>
+    </div>
+
+    <!-- TIKA -->
+    <div class="product">
+      <div class="product-copy">
+        <div class="product-mark">
+          <div class="glyph tika">T</div>
+          <div>
+            <div class="name">Tika<span style="color:var(--rust)">.</span></div>
+            <div class="tag">TICKET · BASED · KANBAN</div>
+          </div>
+        </div>
+        <div class="ptitle">흩어진 할 일을 <em>목표 단위로</em> 묶어 일하세요.</div>
+        <p class="pdesc">Goal → Story → Feature → Task로 연결되는 계층형 티켓과 드래그 앤 드롭 칸반. 번다운, 워크로드, WBS/간트까지. 작은 팀부터 엔터프라이즈까지 하나의 보드로.</p>
+        <ul class="plist">
+          <li><span class="k">BOARD</span><span><strong>3칼럼 드래그 칸반</strong> · 백로그 사이드바, 실시간 필터·검색</span></li>
+          <li><span class="k">HIERARCHY</span><span><strong>4단계 티켓 타입</strong> · Goal·Story·Feature·Task 상하위 연결</span></li>
+          <li><span class="k">TEAM</span><span><strong>OWNER/MEMBER/VIEWER</strong> · 초대 링크, WBS/간트, 팀 대시보드</span></li>
+          <li><span class="k">NOTIFY</span><span><strong>Slack·Telegram</strong> · 마감 D-1 자동 알림, 헤더 벨 드롭다운</span></li>
+          <li><span class="k">AUTH</span><span><strong>Google OAuth</strong> · NextAuth.js v5, 워크스페이스 온보딩</span></li>
+        </ul>
+        <div class="pcta">
+          <a href="tika.html" class="btn btn-primary">Tika 자세히 보기 →</a>
+          <a href="https://github.com/claude-code-expert/tika" target="_blank" class="btn btn-ghost">GitHub</a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="accent"></div>
+        <div class="win">
+          <div class="win-bar">
+            <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+            <div class="url">tika-app.vercel.app</div>
+          </div>
+          <img src="assets/tika-board.png" alt="Tika 칸반 보드" style="width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKFLOW -->
+    <div class="product reverse" style="margin-top: 120px;">
+      <div class="product-copy">
+        <div class="product-mark">
+          <div class="glyph mark">M</div>
+          <div>
+            <div class="name">MarkFlow<span style="color:var(--rust)">.</span></div>
+            <div class="tag">MARKDOWN · KNOWLEDGE · SYSTEM</div>
+          </div>
+        </div>
+        <div class="ptitle">팀의 지식을 <em>구조로</em> 쌓으세요.</div>
+        <p class="pdesc">마크다운 기반 듀얼 에디터와 문서 관계 맵. docx·ppt·html·pdf를 모두 마크다운으로 변환하고, 문서 간 연결을 한눈에. 프리젠테이션 모드와 Workers/Pages 퍼블리시까지.</p>
+        <ul class="plist">
+          <li><span class="k">EDITOR</span><span><strong>듀얼 에디터</strong> · 좌측 마크다운, 우측 프리뷰. LaTeX·코드 포매터</span></li>
+          <li><span class="k">CONVERT</span><span><strong>모든 포맷 → MD</strong> · docx, ppt, html, pdf 자동 변환</span></li>
+          <li><span class="k">GRAPH</span><span><strong>문서 연결 맵</strong> · 이전/다음/상위 관계를 한눈에 보는 시각화</span></li>
+          <li><span class="k">PUBLISH</span><span><strong>원클릭 배포</strong> · Cloudflare Workers / GitHub Pages 연동</span></li>
+          <li><span class="k">AI</span><span><strong>문서 자동 분석</strong> · 요약·검증·출처 관리 (프리미엄)</span></li>
+        </ul>
+        <div class="pcta">
+          <a href="markflow.html" class="btn btn-primary">MarkFlow 자세히 보기 →</a>
+          <a href="https://github.com/claude-code-expert/markflow" target="_blank" class="btn btn-ghost">GitHub</a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="accent"></div>
+        <div class="win">
+          <div class="win-bar">
+            <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+            <div class="url">localhost</div>
+          </div>
+          <img src="assets/mark-write.png" alt="MarkFlow 에디터" style="width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section id="why" class="dot-bg">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">
+        <span class="eyebrow">Why Simplite</span>
+        <h2 class="kr-h2" style="margin-top:12px;">우리가 <span style="color:var(--rust)">해결한</span> 불편들.</h2>
+      </div>
+      <div class="aside" style="width: 400px; text-align: left; padding: 10px;">업무 도구는 많습니다. 그러나 대부분 '도구를 관리하기 위한 도구'로 변해버립니다. </div>
+    </div>
+    <div class="why-grid">
+      <div class="problem">
+        <div class="no">PROBLEM 01</div>
+        <div class="bad">"어제 뭐 했지?"<br>매일 아침 반복되는 질문</div>
+        <div class="arrow">→ SIMPLITE ANSWER</div>
+        <div class="good"><strong>Tika의 계층형 티켓</strong>이 흩어진 업무를 목표 단위로 연결합니다. 개인의 오늘 할 일과 팀의 이번 분기 목표가 같은 구조 안에서 움직입니다.</div>
+      </div>
+      <div class="problem">
+        <div class="no">PROBLEM 02</div>
+        <div class="bad">"그 문서 어디 있었지?"<br>검색해도 나오지 않는 지식</div>
+        <div class="arrow">→ SIMPLITE ANSWER</div>
+        <div class="good"><strong>MarkFlow의 관계형 그래프</strong>가 문서 간 연결을 시각화합니다. 단일 검색이 아니라, 구조 위에서 맥락을 따라갑니다.</div>
+      </div>
+      <div class="problem">
+        <div class="no">PROBLEM 03</div>
+        <div class="bad">"AI 연동은 다 유료·클라우드"<br>망분리 환경에선 못 쓰는 도구들</div>
+        <div class="arrow">→ SIMPLITE ANSWER</div>
+        <div class="good"><strong>MCP 네이티브 + 온프레미스 LLM</strong>. 내부 서버에 설치하고 사내 모델을 붙여 컴플라이언스 안에서 AI 자동화를 완성합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENTERPRISE ============ -->
+<section id="enterprise">
+  <div class="container">
+    <div class="ent">
+      <div class="ent-head">
+        <div>
+          <span class="eyebrow">Enterprise · Coming Soon</span>
+          <h2 style="margin-top:16px;">설치형으로, <em>당신의 환경</em>에.</h2>
+        </div>
+        <p class="desc">오픈소스 버전을 그대로 내부 인프라에 설치하고, 상용 라이선스로 엔터프라이즈 기능을 확장하세요. 망분리·금융·공공 환경을 위한 완전 내부망 배포부터, 사내 LLM과 SSO 연동까지 한 번에.</p>
+      </div>
+      <div class="ent-grid">
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div>
+          <h4>On-Premise 설치형</h4>
+          <p>완전한 내부망 배포. Docker / Kubernetes / Helm Chart 전 환경 지원.</p>
+        </div>
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+          <h4>망분리 컴플라이언스</h4>
+          <p>외부 네트워크 단절 상태에서도 동작. 금융·공공 보안 환경 인증 진행 중.</p>
+        </div>
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <h4>온프레미스 LLM 연동</h4>
+          <p>사내 오픈 모델을 그대로 붙여 RAG·Agent 자동화. 데이터는 외부로 나가지 않습니다.</p>
+        </div>
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><path d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-7l-2-2H6a2 2 0 00-2 2z"/></svg></div>
+          <h4>SSO / RBAC</h4>
+          <p>SAML·OIDC·LDAP 지원. 역할 기반 세밀한 권한 관리. Audit Log 완비.</p>
+        </div>
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><path d="M3 12l3-7 3 5 3-9 3 11 3-3 3 3"/></svg></div>
+          <h4>RAG 파이프라인 인터페이스</h4>
+          <p>문서 → 임베딩 → 검색 → 생성의 전 과정을 GUI로 구성·모니터링.</p>
+        </div>
+        <div class="ent-cell">
+          <div class="icn"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+          <h4>MCP 네이티브 에이전트</h4>
+          <p>Tika·MarkFlow의 모든 오브젝트가 MCP로 노출. 자사 에이전트와 자연스럽게 연결.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">
+        <span class="eyebrow">License & Pricing</span>
+        <h2 class="kr-h2" style="margin-top:12px; white-space: nowrap;">자유롭게 시작하고, <span style="color:var(--green);">필요할 때</span> 확장하세요.</h2>
+      </div>
+      <div class="aside">모든 코어 기능은 오픈소스로 영구 무료. 팀·엔터프라이즈 라이선스는 AI 자동화와 엔터프라이즈 기능을 추가합니다.</div>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="pname">Free<span style="color:var(--rust)">.</span></div>
+        <div class="ptier">OPEN SOURCE / SELF-HOST</div>
+        <div class="pprice">₩0</div>
+        <div class="pnote">Apache 2.0 · 영구 무료</div>
+        <ul>
+          <li>Tika 칸반 보드 전체 기능</li>
+          <li>MarkFlow 에디터·퍼블리시</li>
+          <li>자가 호스팅 · Docker 배포</li>
+          <li>무제한 개인·팀 사용</li>
+          <li>커뮤니티 지원 (GitHub Issues)</li>
+          <li class="off">AI 자동화 기능</li>
+          <li class="off">SSO / RBAC</li>
+        </ul>
+        <a href="https://github.com/claude-code-expert" target="_blank" class="btn btn-outline">GitHub에서 시작</a>
+      </div>
+
+      <div class="plan feat">
+        <div class="pbadge">RECOMMENDED</div>
+        <div class="pname">Team<span style="color:var(--rust)">.</span></div>
+        <div class="ptier">CLOUD SAAS · PER SEAT</div>
+        <div class="pprice">₩9,900 <small>/ user · mo</small></div>
+        <div class="pnote">개발 중 · 베타 대기 신청</div>
+        <ul>
+          <li>Free 모든 기능</li>
+          <li><strong>AI 문서 자동 분석·요약</strong></li>
+          <li><strong>AI 에이전트 티켓 자동 생성</strong></li>
+          <li>Slack / Telegram 고급 알림</li>
+          <li>팀 대시보드·번다운·워크로드</li>
+          <li>MCP 외부 연결 (Claude·Cursor)</li>
+          <li>이메일 기반 기술 지원</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">베타 신청</a>
+      </div>
+
+      <div class="plan">
+        <div class="pname">Enterprise<span style="color:var(--rust)">.</span></div>
+        <div class="ptier">ON-PREMISE · LICENSED</div>
+        <div class="pprice">문의</div>
+        <div class="pnote">설치형 · 연 단위 라이선스</div>
+        <ul>
+          <li>Team 모든 기능</li>
+          <li><strong>완전 내부망 On-Premise</strong></li>
+          <li><strong>온프레미스 LLM 연동</strong></li>
+          <li>SSO / RBAC / Audit Log</li>
+          <li>RAG 파이프라인 GUI</li>
+          <li>망분리 컴플라이언스 지원</li>
+          <li>전담 SA · SLA 계약</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline">도입 상담</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="tight">
+  <div class="container">
+    <div class="section-head" style="text-align:center; justify-content:center;">
+      <div class="title" style="text-align:center;">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="kr-h2" style="margin-top:12px;">자주 묻는 질문.</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">Free(오픈소스) 버전은 정말 영구 무료인가요? <span class="plus">+</span></div>
+        <div class="faq-a">네. Tika와 MarkFlow의 코어는 Apache 2.0으로 공개되어 있으며, 개인·상업적 이용·수정·재배포 모두 자유롭습니다. 자가호스팅 시 별도 비용이 없으며, 커뮤니티 지원은 GitHub Issues에서 이뤄집니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Team / Enterprise 플랜은 언제 출시되나요? <span class="plus">+</span></div>
+        <div class="faq-a">현재 고도화 개발 중이며, 2026년 상반기 베타 출시를 목표로 진행하고 있습니다. 문의 페이지에서 대기 리스트에 등록하시면 우선 순위로 안내드립니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Tika와 MarkFlow는 따로 써도 되나요? <span class="plus">+</span></div>
+        <div class="faq-a">각각 독립 제품으로 설계되어 단독 사용이 가능합니다. 다만 MCP 네이티브 구조 덕분에, 둘을 함께 쓰면 MarkFlow의 문서와 Tika의 티켓이 자연스럽게 연결되어 업무 컨텍스트를 유지할 수 있습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">온프레미스 LLM은 어떤 모델을 지원하나요? <span class="plus">+</span></div>
+        <div class="faq-a">Ollama, vLLM 기반의 오픈 모델(Llama 3, Qwen, DeepSeek 등)을 기본 지원합니다. OpenAI 호환 API 엔드포인트라면 무엇이든 연결 가능하며, 사내 인프라 구축도 도와드립니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">기존 업무 도구(Jira, Notion 등)에서 마이그레이션이 가능한가요? <span class="plus">+</span></div>
+        <div class="faq-a">Tika는 Jira CSV Import를, MarkFlow는 Notion·Confluence·docx·pdf의 MD 일괄 변환을 지원합니다. Enterprise 플랜은 커스텀 마이그레이션 지원을 포함합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">MCP 네이티브는 정확히 무엇을 의미하나요? <span class="plus">+</span></div>
+        <div class="faq-a">모든 티켓·문서·워크스페이스 오브젝트가 Model Context Protocol 스펙으로 노출된다는 의미입니다. Claude Desktop, Cursor, 자사 AI 에이전트에서 Simplite 데이터에 직접 접근·수정할 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center; display:inline-flex;">Get Started</span>
+    <h2 style="margin-top:20px;">Simply manage<br>your <em>knowledge</em> and <em>tasks</em>.</h2>
+    <p>오픈소스로 5분 안에 시작하세요. 엔터프라이즈는 전담팀이 함께합니다.</p>
+    <div class="final-ctas">
+      <a href="https://github.com/claude-code-expert" target="_blank" class="btn btn-primary">GitHub에서 시작</a>
+      <a href="contact.html" class="btn btn-outline">도입 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom: 14px;"><span class="mark"></span>Simplite<span class="dot">.</span></div>
+        <p style="font-size: 13px; max-width: 320px; line-height: 1.6; color: var(--ink-muted);">쉽게 쓰고, 효율적으로 관리하세요. 따로 배울 필요 없는 직관적인 지식·업무 관리 도구군.</p>
+        <p style="font-family: var(--font-mono); font-size: 11px; margin-top: 18px; color: var(--ink-faint); letter-spacing:0.1em;">SIMPLITE.NET · EST. 2026</p>
+      </div>
+      <div>
+        <h4>제품</h4>
+        <ul>
+          <li><a href="tika.html">Tika</a></li>
+          <li><a href="markflow.html">MarkFlow</a></li>
+          <li><a href="#pricing">가격</a></li>
+          <li><a href="#enterprise">Enterprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>리소스</h4>
+        <ul>
+          <li><a href="https://github.com/claude-code-expert/tika" target="_blank">Tika GitHub</a></li>
+          <li><a href="https://github.com/claude-code-expert/markflow" target="_blank">MarkFlow GitHub</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="contact.html">문의하기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>연락</h4>
+        <ul>
+          <li><a href="mailto:hello@simplite.net">hello@simplite.net</a></li>
+          <li><a href="mailto:sales@simplite.net">sales@simplite.net</a></li>
+          <li><a href="mailto:dev@simplite.net">dev@simplite.net</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 SIMPLITE</span>
+      <span>APACHE 2.0 · MCP NATIVE · ON-PREMISE READY</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Tweaks panel -->
+<div id="tweaksPanel">
+  <h5>Tweaks</h5>
+  <div class="tk-sub">Container Layout</div>
+  <div class="tk-row">
+    <label>Shift Left <span class="v" id="vOffset">0px</span></label>
+    <input type="range" id="tkOffset" min="0" max="120" step="2" value="0">
+  </div>
+  <div class="tk-row">
+    <label>Width Delta <span class="v" id="vWidth">0px</span></label>
+    <input type="range" id="tkWidth" min="0" max="200" step="2" value="0">
+  </div>
+  <div class="tk-row">
+    <label>Panel Width <span class="v" id="vPanel">380px</span></label>
+    <input type="range" id="tkPanel" min="280" max="500" step="2" value="380">
+  </div>
+  <div class="tk-actions">
+    <button id="tkPreset">+20 / +20</button>
+    <button id="tkPanel450">450</button>
+    <button id="tkReset">Reset</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "containerOffset": 0,
+    "containerWidthDelta": 0,
+    "panelWidth": 402
+  }/*EDITMODE-END*/;
+  let state = { ...TWEAK_DEFAULTS };
+  const panel = document.getElementById('tweaksPanel');
+  const tkOffset = document.getElementById('tkOffset');
+  const tkWidth = document.getElementById('tkWidth');
+  const tkPanel = document.getElementById('tkPanel');
+  const vOffset = document.getElementById('vOffset');
+  const vWidth = document.getElementById('vWidth');
+  const vPanel = document.getElementById('vPanel');
+  const baseContainer = 1240;
+
+  function apply() {
+    document.querySelectorAll('.container').forEach(c => {
+      c.style.maxWidth = (baseContainer + state.containerWidthDelta) + 'px';
+      c.style.transform = state.containerOffset ? `translateX(-${state.containerOffset}px)` : '';
+    });
+    panel.style.width = state.panelWidth + 'px';
+    tkOffset.value = state.containerOffset;
+    tkWidth.value = state.containerWidthDelta;
+    tkPanel.value = state.panelWidth;
+    vOffset.textContent = state.containerOffset + 'px';
+    vWidth.textContent = state.containerWidthDelta + 'px';
+    vPanel.textContent = state.panelWidth + 'px';
+  }
+  function persist(edits) {
+    state = { ...state, ...edits };
+    apply();
+    window.parent.postMessage({type:'__edit_mode_set_keys', edits}, '*');
+  }
+
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') panel.classList.add('show');
+    if (d.type === '__deactivate_edit_mode') panel.classList.remove('show');
+  });
+  window.parent.postMessage({type:'__edit_mode_available'}, '*');
+
+  tkOffset.addEventListener('input', () => persist({containerOffset: +tkOffset.value}));
+  tkWidth.addEventListener('input', () => persist({containerWidthDelta: +tkWidth.value}));
+  tkPanel.addEventListener('input', () => persist({panelWidth: +tkPanel.value}));
+  document.getElementById('tkPreset').addEventListener('click', () => persist({containerOffset: 20, containerWidthDelta: 20}));
+  document.getElementById('tkPanel450').addEventListener('click', () => persist({panelWidth: 450}));
+  document.getElementById('tkReset').addEventListener('click', () => persist({containerOffset: 0, containerWidthDelta: 0, panelWidth: 380}));
+
+  apply();
+})();
+</script>
+
+<script>
+// Reveal on load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('in'), 100 + i * 180);
+  });
+});
+// Scroll reveal for later elements
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('section .problem, .ent-cell, .plan, .pillar').forEach(el => {
+  el.classList.add('reveal');
+  io.observe(el);
+});
+
+// FAQ toggle
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// Lang toggle (demo only — persists choice)
+document.querySelectorAll('#langToggle button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#langToggle button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    localStorage.setItem('simplite_lang', b.dataset.lang);
+  });
+});
+const savedLang = localStorage.getItem('simplite_lang');
+if (savedLang) {
+  const btn = document.querySelector(`#langToggle button[data-lang="${savedLang}"]`);
+  if (btn) { document.querySelectorAll('#langToggle button').forEach(x => x.classList.remove('active')); btn.classList.add('active'); }
+}
+</script>
+
+</body>
+</html>

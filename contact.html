@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문의 — Simplite.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.chero { padding: 80px 0 40px; text-align: center; }
+.chero h1 { font-family: var(--font-serif); font-size: clamp(48px, 6vw, 84px); font-style: italic; color: var(--green); margin: 18px 0 24px; line-height: 1.1; }
+.chero h1 .dot { color: var(--rust); font-style: normal; }
+.chero p { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.65; }
+
+.tabs-wrap { max-width: 960px; margin: 40px auto 0; }
+.tabs-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.tabs-row button {
+  padding: 14px 20px; border-radius: 999px;
+  color: var(--ink-muted); transition: all .25s;
+}
+.tabs-row button.active { background: var(--green); color: #fff; }
+
+.panel {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  background: #fff;
+  border: 1px solid var(--green);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow);
+}
+.panel.hidden { display: none; }
+.panel-intro h3 { font-family: var(--font-sans); font-size: 28px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.2; }
+.panel-intro h3 em { color: var(--green); font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+.panel-intro p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; }
+.panel-intro .quick { border-top: 1px solid var(--line-soft); padding-top: 20px; margin-top: 20px; }
+.panel-intro .quick h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-muted); margin-bottom: 10px; text-transform: uppercase; }
+.panel-intro .quick a { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: var(--ink); border-bottom: 1px dashed var(--line-soft); }
+.panel-intro .quick a:last-child { border-bottom: 0; }
+.panel-intro .quick a:hover { color: var(--green); }
+.panel-intro .quick a .mono { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); }
+
+/* Form */
+form { display: grid; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.row { flex-direction: row; gap: 16px; }
+.field.row > div { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+label { font-family: var(--font-mono); font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; }
+input, textarea, select {
+  border: 0; border-bottom: 1px solid var(--line);
+  background: transparent; padding: 10px 0;
+  font-family: var(--font-sans); font-size: 15px;
+  color: var(--ink); transition: border-color .2s;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--green); }
+textarea { resize: vertical; min-height: 100px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.chip {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px; color: var(--ink-soft);
+  cursor: pointer; transition: all .2s;
+  background: #fff;
+}
+.chip.on { background: var(--green); color: #fff; border-color: var(--green); }
+.submit-row { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+.submit-row .note { font-size: 12px; color: var(--ink-muted); }
+
+.ok-msg {
+  display: none; background: var(--green-soft); border: 1px solid var(--green);
+  color: var(--green); padding: 16px 20px; border-radius: 10px;
+  font-size: 14px; margin-top: 16px;
+}
+.ok-msg.show { display: block; }
+
+@media (max-width: 860px) {
+  .panel { grid-template-columns: 1fr; padding: 32px; }
+}
+
+.extra { padding: 60px 0 80px; border-top: 1px solid var(--line-soft); margin-top: 80px; }
+.extra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.extra-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; transition: all .25s; }
+.extra-card:hover { border-color: var(--green); }
+.extra-card h4 { font-family: var(--font-serif); font-size: 22px; color: var(--green); font-style: italic; margin-bottom: 10px; }
+.extra-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 14px; }
+.extra-card a { font-family: var(--font-mono); font-size: 12px; color: var(--green); letter-spacing: 0.05em; }
+.extra-card a:hover { text-decoration: underline; }
+@media (max-width: 900px) { .extra-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="mark"></span>Simplite<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html#products">Products</a>
+      <a href="tika.html">Tika</a>
+      <a href="markflow.html">MarkFlow</a>
+      <a href="index.html#enterprise">Enterprise</a>
+      <a href="index.html#pricing">가격</a>
+      <a href="contact.html" style="color:var(--green); font-weight:500;">문의</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://github.com/claude-code-expert" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="chero">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center; display:inline-flex;">Contact Simplite</span>
+    <h1>How can we<br>help you<span class="dot">?</span></h1>
+    <p>도입, 라이선스, 기술적 질문까지. 각 창구로 나누어 두었으니 용도에 맞게 선택해 주세요. 영업일 기준 24시간 내 회신드립니다.</p>
+  </div>
+</header>
+
+<section style="padding-top: 20px;">
+  <div class="container">
+    <div class="tabs-wrap">
+      <div class="tabs-row">
+        <button class="active" data-tab="sales">● 구매 · 도입 문의</button>
+        <button data-tab="dev">● 개발자 · 기술 문의</button>
+      </div>
+
+      <!-- SALES PANEL -->
+      <div class="panel" data-panel="sales">
+        <div class="panel-intro">
+          <h3>Team · <em>Enterprise</em><br>도입 상담.</h3>
+          <p>회사·인원·예상 사용처를 알려주시면, 담당자가 적합한 플랜과 온프레미스 구축 견적을 준비해 연락드립니다.</p>
+          <div class="quick">
+            <h5>Direct Channels</h5>
+            <a href="mailto:sales@simplite.net"><span>Sales</span><span class="mono">sales@simplite.net</span></a>
+            <a href="#"><span>Slack Community</span><span class="mono">join →</span></a>
+            <a href="#"><span>전화 상담 예약</span><span class="mono">book →</span></a>
+          </div>
+        </div>
+        <form id="salesForm">
+          <div class="field row">
+            <div><label>이름</label><input type="text" name="name" required></div>
+            <div><label>회사명</label><input type="text" name="company" required></div>
+          </div>
+          <div class="field row">
+            <div><label>이메일</label><input type="email" name="email" required></div>
+            <div><label>연락처 (선택)</label><input type="tel" name="phone"></div>
+          </div>
+          <div class="field">
+            <label>관심 제품 (복수 선택)</label>
+            <div class="chips" data-name="products">
+              <div class="chip" data-val="tika">Tika</div>
+              <div class="chip" data-val="markflow">MarkFlow</div>
+              <div class="chip" data-val="both">Tika + MarkFlow</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>도입 규모</label>
+            <div class="chips" data-name="size">
+              <div class="chip" data-val="1-10">1–10명</div>
+              <div class="chip" data-val="11-50">11–50명</div>
+              <div class="chip" data-val="51-200">51–200명</div>
+              <div class="chip" data-val="200+">200명 이상</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>플랜 관심</label>
+            <div class="chips" data-name="plan">
+              <div class="chip" data-val="team">Team (Cloud SaaS)</div>
+              <div class="chip" data-val="enterprise">Enterprise (On-Prem)</div>
+              <div class="chip" data-val="llm">온프레미스 LLM 연동</div>
+              <div class="chip" data-val="sso">SSO · RBAC</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>문의 내용</label>
+            <textarea name="message" placeholder="현재 사용 중인 도구, 마이그레이션 범위, 특별한 컴플라이언스 요구사항 등을 자유롭게 적어주세요." required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary">상담 요청 보내기 →</button>
+            <span class="note">영업일 24h 내 회신</span>
+          </div>
+          <div class="ok-msg" id="salesOk">✓ 접수되었습니다. 담당자가 곧 이메일로 회신드립니다.</div>
+        </form>
+      </div>
+
+      <!-- DEV PANEL -->
+      <div class="panel hidden" data-panel="dev">
+        <div class="panel-intro">
+          <h3>개발자 · <em>기술</em> 문의.</h3>
+          <p>버그, 기능 제안, MCP 연동, 컨트리뷰션까지. GitHub Issues가 빠르지만, 공개하기 어려운 내용은 이곳으로 보내주세요.</p>
+          <div class="quick">
+            <h5>Direct Channels</h5>
+            <a href="mailto:dev@simplite.net"><span>Dev Contact</span><span class="mono">dev@simplite.net</span></a>
+            <a href="https://github.com/claude-code-expert/tika" target="_blank"><span>Tika Issues</span><span class="mono">github ↗</span></a>
+            <a href="https://github.com/claude-code-expert/markflow" target="_blank"><span>MarkFlow Issues</span><span class="mono">github ↗</span></a>
+            <a href="#"><span>Discord</span><span class="mono">join →</span></a>
+          </div>
+        </div>
+        <form id="devForm">
+          <div class="field row">
+            <div><label>이름 · 핸들</label><input type="text" name="name" required></div>
+            <div><label>이메일</label><input type="email" name="email" required></div>
+          </div>
+          <div class="field">
+            <label>대상 제품</label>
+            <div class="chips" data-name="target">
+              <div class="chip" data-val="tika">Tika</div>
+              <div class="chip" data-val="markflow">MarkFlow</div>
+              <div class="chip" data-val="mcp">MCP 연동</div>
+              <div class="chip" data-val="infra">인프라 · 배포</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>문의 유형</label>
+            <div class="chips" data-name="topic">
+              <div class="chip" data-val="bug">버그 리포트</div>
+              <div class="chip" data-val="feature">기능 제안</div>
+              <div class="chip" data-val="security">보안 · CVE 제보</div>
+              <div class="chip" data-val="contrib">컨트리뷰션</div>
+              <div class="chip" data-val="other">기타</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>GitHub 이슈 URL (선택)</label>
+            <input type="url" name="issue" placeholder="https://github.com/...">
+          </div>
+          <div class="field">
+            <label>상세 내용</label>
+            <textarea name="message" placeholder="재현 단계, 환경, 예상 동작 vs 실제 동작 등" required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary">메시지 보내기 →</button>
+            <span class="note">보안 이슈는 dev@simplite.net 직접 발송 권장</span>
+          </div>
+          <div class="ok-msg" id="devOk">✓ 접수되었습니다. 기술팀이 곧 회신드립니다.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="extra">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">
+        <span class="eyebrow">Other Channels</span>
+        <h2 class="kr-h2" style="margin-top:12px;">그 외 채널.</h2>
+      </div>
+    </div>
+    <div class="extra-grid">
+      <div class="extra-card">
+        <h4>Partnership</h4>
+        <p>SI · 리셀러 · 기술 파트너십 등 협업 제안을 환영합니다. 간단한 소개와 함께 연락 주세요.</p>
+        <a href="mailto:partner@simplite.net">partner@simplite.net →</a>
+      </div>
+      <div class="extra-card">
+        <h4>Press · Media</h4>
+        <p>취재·인터뷰·로고 사용 등 언론 관련 문의. 미디어 키트는 요청 시 보내드립니다.</p>
+        <a href="mailto:press@simplite.net">press@simplite.net →</a>
+      </div>
+      <div class="extra-card">
+        <h4>Security</h4>
+        <p>CVE 제보, 취약점 리포트는 책임 공개(disclosure) 원칙에 따라 우선 처리됩니다.</p>
+        <a href="mailto:security@simplite.net">security@simplite.net →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom: 14px;"><span class="mark"></span>Simplite<span class="dot">.</span></div>
+        <p style="font-size: 13px; max-width: 320px; line-height: 1.6; color: var(--ink-muted);">쉽게 쓰고, 효율적으로 관리하세요.</p>
+      </div>
+      <div><h4>제품</h4><ul><li><a href="tika.html">Tika</a></li><li><a href="markflow.html">MarkFlow</a></li><li><a href="index.html#pricing">가격</a></li></ul></div>
+      <div><h4>리소스</h4><ul><li><a href="https://github.com/claude-code-expert/tika" target="_blank">Tika GitHub</a></li><li><a href="https://github.com/claude-code-expert/markflow" target="_blank">MarkFlow GitHub</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+      <div><h4>연락</h4><ul><li><a href="mailto:hello@simplite.net">hello@simplite.net</a></li><li><a href="mailto:sales@simplite.net">sales@simplite.net</a></li><li><a href="mailto:dev@simplite.net">dev@simplite.net</a></li></ul></div>
+    </div>
+    <div class="foot-meta"><span>© 2026 SIMPLITE</span><span>APACHE 2.0 · MCP NATIVE · ON-PREMISE READY</span></div>
+  </div>
+</footer>
+
+<script>
+// Tab switch
+document.querySelectorAll('.tabs-row button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs-row button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const t = b.dataset.tab;
+    document.querySelectorAll('.panel').forEach(p => {
+      p.classList.toggle('hidden', p.dataset.panel !== t);
+    });
+  });
+});
+
+// Chip toggle (multi-select)
+document.querySelectorAll('.chips').forEach(group => {
+  group.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip');
+    if (!chip) return;
+    chip.classList.toggle('on');
+  });
+});
+
+// Form submit (fake)
+function handleSubmit(formId, okId) {
+  const f = document.getElementById(formId);
+  const ok = document.getElementById(okId);
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    ok.classList.add('show');
+    setTimeout(() => { f.reset(); document.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on')); }, 400);
+    setTimeout(() => ok.classList.remove('show'), 5000);
+  });
+}
+handleSubmit('salesForm', 'salesOk');
+handleSubmit('devForm', 'devOk');
+</script>
+
+</body>
+</html>
