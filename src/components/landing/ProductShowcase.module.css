@@ -1,0 +1,23 @@
+.product { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding: 48px 0; align-items: center; }
+.reverse { grid-template-areas: "img copy"; }
+.reverse .productCopy { grid-area: copy; }
+.reverse .productVisual { grid-area: img; }
+.productMark { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.glyph { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 26px; font-style: italic; }
+.glyphTika { background: var(--green); color: #fff; }
+.glyphMark { background: #fff; color: var(--green); border: 1px solid var(--green); }
+.name { font-family: var(--font-serif); font-size: 32px; color: var(--green); }
+.tag { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.ptitle { font-family: var(--font-sans); font-size: 36px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 20px; }
+.ptitle em { color: var(--green); font-style: normal; background: linear-gradient(transparent 65%, var(--green-soft) 65%); padding: 0 2px; }
+.pdesc { font-size: 16px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
+.plist { list-style: none; margin-bottom: 32px; }
+.plist li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--line-soft); font-size: 14px; color: var(--ink-soft); }
+.plist li:last-child { border-bottom: 0; }
+.k { font-family: var(--font-mono); color: var(--green); font-size: 11px; min-width: 90px; padding-top: 3px; }
+.plist li strong { color: var(--ink); font-weight: 600; margin-right: 6px; }
+.pcta { display: flex; gap: 12px; flex-wrap: wrap; }
+.productVisual { position: relative; }
+.accent { position: absolute; inset: -20px; z-index: -1; background: var(--green-soft); border-radius: 24px; transform: rotate(2deg); }
+.accentReverse { background: var(--cream); transform: rotate(-2deg); }
+@media (max-width: 960px) { .product, .reverse { grid-template-columns: 1fr; grid-template-areas: none; gap: 40px; } }

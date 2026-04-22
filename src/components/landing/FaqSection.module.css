@@ -1,0 +1,7 @@
+.faqList { max-width: 860px; margin: 0 auto; }
+.faqItem { border-bottom: 1px solid var(--line-soft); padding: 24px 0; cursor: pointer; }
+.faqQ { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--ink); }
+.plus { font-family: var(--font-mono); color: var(--green); font-size: 20px; transition: transform .3s; flex-shrink: 0; }
+.faqA { color: var(--ink-soft); font-size: 14px; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, margin .35s ease; padding-right: 40px; }
+.open .faqA { max-height: 400px; margin-top: 16px; }
+.open .plus { transform: rotate(45deg); }

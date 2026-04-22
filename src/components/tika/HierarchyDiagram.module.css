@@ -1,0 +1,15 @@
+.hier { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 48px; background: #fff; border: 1px solid var(--green); border-radius: var(--radius-lg); }
+.hier h3 { font-family: var(--font-sans); font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+.hier p { color: var(--ink-soft); line-height: 1.65; font-size: 15px; }
+.hierVis { display: flex; flex-direction: column; gap: 10px; font-family: var(--font-mono); font-size: 12px; }
+.hierRow { display: flex; align-items: center; gap: 12px; }
+.pill { padding: 8px 14px; border-radius: 6px; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.g .pill { background: #fff0e8; border-color: var(--rust); color: var(--rust); font-weight: 600; }
+.s { padding-left: 28px; }
+.s .pill { background: #f2ecff; border-color: #c9baef; color: #6d4aa8; }
+.f { padding-left: 56px; }
+.f .pill { background: #e8f0ff; border-color: #bfd4ef; color: #3a6fb8; }
+.t { padding-left: 84px; }
+.t .pill { background: var(--green-soft); border-color: var(--green); color: var(--green); }
+.cnt { font-size: 10px; color: var(--ink-muted); }
+@media (max-width: 900px) { .hier { grid-template-columns: 1fr; padding: 32px; } }

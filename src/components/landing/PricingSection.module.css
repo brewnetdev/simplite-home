@@ -1,0 +1,15 @@
+.priceGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan { border: 1px solid var(--line); border-radius: var(--radius); padding: 36px 32px; background: #fff; display: flex; flex-direction: column; position: relative; }
+.feat { border: 1.5px solid var(--green); background: linear-gradient(180deg, #fff 0%, var(--green-soft) 100%); transform: scale(1.02); box-shadow: var(--shadow-lg); }
+.pname { font-family: var(--font-serif); font-size: 30px; color: var(--green); font-style: italic; margin-bottom: 4px; }
+.ptier { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
+.pprice { font-family: var(--font-serif); font-size: 48px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+.pprice small { font-size: 14px; color: var(--ink-muted); font-family: var(--font-sans); }
+.pnote { font-size: 13px; color: var(--ink-muted); margin-bottom: 28px; }
+.plan ul { list-style: none; margin-bottom: 28px; flex: 1; }
+.plan ul li { padding: 8px 0; font-size: 14px; color: var(--ink-soft); display: flex; gap: 10px; align-items: flex-start; }
+.plan ul li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 8px; flex-shrink: 0; }
+.off { color: var(--ink-faint) !important; }
+.off::before { background: var(--ink-faint) !important; }
+.pbadge { position: absolute; top: -12px; right: 24px; background: var(--rust); color: #fff; font-family: var(--font-mono); font-size: 10px; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.1em; }
+@media (max-width: 900px) { .priceGrid { grid-template-columns: 1fr; } .feat { transform: none; } }

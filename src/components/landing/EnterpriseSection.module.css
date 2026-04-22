@@ -1,0 +1,13 @@
+.ent { background: var(--ink); color: #fff; border-radius: var(--radius-lg); padding: 80px 56px; position: relative; overflow: hidden; }
+.ent::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(26,58,46,0.35) 100%); pointer-events: none; }
+.entHead { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 56px; position: relative; }
+.eyebrow { color: var(--green-accent); }
+.eyebrow::before { background: var(--green-accent); }
+.desc { color: #c9d0cc; font-size: 15px; line-height: 1.7; }
+.entGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative; }
+.entCell { background: var(--ink); padding: 28px; }
+.icn { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.icn svg { width: 18px; height: 18px; stroke: var(--sand); fill: none; stroke-width: 1.5; }
+.entCell h4 { font-family: var(--font-sans); font-weight: 600; color: #fff; font-size: 16px; margin-bottom: 8px; }
+.entCell p { color: #a8b2ac; font-size: 13px; line-height: 1.6; }
+@media (max-width: 900px) { .ent { padding: 56px 32px; } .entHead { grid-template-columns: 1fr; gap: 24px; } .entGrid { grid-template-columns: 1fr; } }

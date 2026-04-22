@@ -1,0 +1,7 @@
+.convert { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.convCard { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; text-align: center; transition: all .25s; }
+.convCard:hover { border-color: var(--green); transform: translateY(-3px); }
+.ext { font-family: var(--font-mono); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+.arrow { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); margin: 8px 0; }
+.to { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--green); }
+@media (max-width: 700px) { .convert { grid-template-columns: 1fr 1fr; } }

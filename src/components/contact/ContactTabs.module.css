@@ -1,0 +1,4 @@
+.tabsWrap { max-width: 960px; margin: 40px auto 0; }
+.tabsRow { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 4px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 32px; }
+.tabsRow button { padding: 14px 20px; border-radius: 999px; color: var(--ink-muted); transition: all .25s; }
+.active { background: var(--green); color: #fff !important; }

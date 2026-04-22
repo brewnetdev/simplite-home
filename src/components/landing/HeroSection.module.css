@@ -1,0 +1,19 @@
+.hero { padding: 72px 0 40px; position: relative; overflow: hidden; }
+.heroInner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.h1 { margin: 24px 0 28px; }
+.em { font-style: italic; color: var(--green); }
+.rust { color: var(--rust); font-style: normal; }
+.heroSub { font-size: 17px; color: var(--ink-soft); max-width: 540px; line-height: 1.65; margin-bottom: 36px; }
+.heroCtas { display: flex; gap: 12px; align-items: center; margin-bottom: 40px; }
+.heroMeta { display: flex; gap: 28px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.heroMeta span { display: flex; align-items: center; gap: 6px; }
+.pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--green-accent); box-shadow: 0 0 0 0 var(--green-accent); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(74,138,110,0.5)} 50%{box-shadow:0 0 0 6px rgba(74,138,110,0)} }
+.heroStack { position: relative; height: 560px; }
+.heroCard { position: absolute; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-lg); overflow: hidden; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.tika { top: 40px; right: 0; width: 92%; transform: rotate(-2deg); border-color: rgba(26,58,46,0.2); }
+.mark { top: 200px; left: 0; width: 78%; transform: rotate(1.5deg); z-index: 2; }
+.heroStack:hover .tika { transform: rotate(0deg) translateY(-8px); }
+.heroStack:hover .mark { transform: rotate(0deg) translateY(-8px); }
+.cap { position: absolute; bottom: 10px; left: 12px; font-family: var(--font-mono); font-size: 10px; background: rgba(255,255,255,0.95); color: var(--green); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--line); }
+@media (max-width: 1000px) { .heroInner { grid-template-columns: 1fr; } .heroStack { height: 480px; margin-top: 40px; } }

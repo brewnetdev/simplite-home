@@ -1,0 +1,23 @@
+.panel { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; background: #fff; border: 1px solid var(--green); border-radius: var(--radius-lg); padding: 48px; box-shadow: var(--shadow); }
+.panelIntro h3 { font-family: var(--font-sans); font-size: 28px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.2; }
+.panelIntro h3 em { color: var(--green); font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+.panelIntro p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; }
+.quick { border-top: 1px solid var(--line-soft); padding-top: 20px; margin-top: 20px; }
+.quick h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-muted); margin-bottom: 10px; text-transform: uppercase; }
+.quick a { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: var(--ink); border-bottom: 1px dashed var(--line-soft); }
+.quick a:last-child { border-bottom: 0; }
+.quick a:hover { color: var(--green); }
+.mono { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); }
+.form { display: grid; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.row { flex-direction: row; gap: 16px; }
+.row > div { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.panel label { font-family: var(--font-mono); font-size: 10px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; }
+.panel input, .panel textarea { border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 10px 0; font-family: var(--font-sans); font-size: 15px; color: var(--ink); transition: border-color .2s; }
+.panel input:focus, .panel textarea:focus { outline: none; border-color: var(--green); }
+.panel textarea { resize: vertical; min-height: 100px; }
+.submitRow { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+.note { font-size: 12px; color: var(--ink-muted); }
+.okMsg { background: var(--green-soft); border: 1px solid var(--green); color: var(--green); padding: 16px 20px; border-radius: 10px; font-size: 14px; margin-top: 16px; }
+.errMsg { background: #fff0e8; border: 1px solid var(--rust); color: var(--rust); padding: 16px 20px; border-radius: 10px; font-size: 14px; margin-top: 16px; }
+@media (max-width: 860px) { .panel { grid-template-columns: 1fr; padding: 32px; } }

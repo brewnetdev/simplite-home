@@ -1,0 +1,7 @@
+.featGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.featCard { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; background: #fff; transition: all .25s; }
+.featCard:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: var(--shadow); }
+.ic { width: 36px; height: 36px; border-radius: 8px; background: var(--green-soft); color: var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 14px; font-weight: 600; margin-bottom: 18px; }
+.featCard h4 { font-family: var(--font-sans); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.featCard p { font-size: 13px; color: var(--ink-soft); line-height: 1.65; }
+@media (max-width: 900px) { .featGrid { grid-template-columns: 1fr; } }

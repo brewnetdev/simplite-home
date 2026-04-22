@@ -1,0 +1,22 @@
+.demoBoard { border: 1px solid var(--green); border-radius: var(--radius-lg); padding: 4px; background: var(--green); box-shadow: var(--shadow-lg); }
+.demoInner { background: #fff; border-radius: calc(var(--radius-lg) - 4px); overflow: hidden; }
+.demoTop { padding: 14px 20px; border-bottom: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; background: #fbfcfb; }
+.dtitle { font-family: var(--font-serif); font-size: 18px; color: var(--green); font-style: italic; }
+.dbadge { font-family: var(--font-mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.demoCols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); min-height: 380px; }
+.demoCol { background: #fff; padding: 16px; }
+.ch { font-family: var(--font-mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; display: flex; justify-content: space-between; }
+.cnt { color: var(--green); }
+.ticket { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 12px; cursor: grab; transition: all .2s; }
+.ticket:hover { border-color: var(--green); box-shadow: var(--shadow-sm); }
+.ttype { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; padding: 2px 5px; border-radius: 3px; display: inline-block; margin-bottom: 6px; }
+.goal { background: #fff0e8; color: var(--rust); }
+.feat { background: #e8f0ff; color: #3a6fb8; }
+.task { background: var(--green-soft); color: var(--green); }
+.story { background: #f2ecff; color: #6d4aa8; }
+.ttitle { color: var(--ink); font-weight: 500; line-height: 1.35; margin-bottom: 6px; }
+.tmeta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--ink-faint); font-family: var(--font-mono); }
+.pri { padding: 1px 5px; border-radius: 3px; background: #ffe8e0; color: var(--rust); }
+.med { background: #fff4d6; color: #b88a20; }
+.low { background: #e6eee8; color: var(--moss); }
+.demoNote { text-align: center; margin-top: 16px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; }

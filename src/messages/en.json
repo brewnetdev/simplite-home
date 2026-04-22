@@ -1,0 +1,273 @@
+{
+  "nav": {
+    "products": "Products",
+    "tika": "Tika",
+    "markflow": "MarkFlow",
+    "enterprise": "Enterprise",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "github": "GitHub"
+  },
+  "hero": {
+    "eyebrow": "Simplite Suite · 2026",
+    "title1": "Simply",
+    "title2": "Thoughtfully",
+    "title3": "managed.",
+    "subtitle": "Write simply, manage efficiently.",
+    "description": "Intuitive knowledge & task management tools that require no learning curve. Simplite is an open-source SaaS suite designed AI·MCP-native.",
+    "cta_products": "Explore Products",
+    "cta_contact": "Contact Sales",
+    "meta_oss": "Apache 2.0 OSS",
+    "meta_mcp": "MCP NATIVE",
+    "meta_onprem": "ON-PREMISE READY"
+  },
+  "logoStrip": {
+    "items": ["Open Source", "Apache 2.0 License", "MCP Native", "AI Agent Ready", "On-Premise Compliant", "SSO / RBAC"]
+  },
+  "philosophy": {
+    "eyebrow": "Philosophy",
+    "title": "Tools should disappear into the work. Not become it.",
+    "description": "You shouldn't spend time learning the tool. Simplite is built so you can focus on what you actually came to do — think, write, decide, and deploy. Simplicity is not a constraint; it's the hardest design outcome.",
+    "pillar1_no": "01 / SIMPLICITY",
+    "pillar1_title": "No learning required",
+    "pillar1_desc": "Anyone opening it for the first time should find their flow within 5 minutes. Every Simplite product is designed on the one-page manual principle.",
+    "pillar2_no": "02 / OPENNESS",
+    "pillar2_title": "Open by default",
+    "pillar2_desc": "Core features are Apache 2.0 — modify, self-host, and use commercially. We start with trust, not lock-in.",
+    "pillar3_no": "03 / AI-NATIVE",
+    "pillar3_title": "Built on MCP & Agents",
+    "pillar3_desc": "All data and work units are MCP-native, connecting naturally with your agents and workflows."
+  },
+  "products": {
+    "eyebrow": "Products · 2 of N",
+    "title": "Two tools by Simplite. More coming soon.",
+    "titleSuffix": "",
+    "aside": "Knowledge and tasks are connected. We built Tika and MarkFlow as two axes, designed to work together.",
+    "tika": {
+      "tag": "TICKET · BASED · KANBAN",
+      "title": "Bundle scattered tasks into goal-driven workflows.",
+      "desc": "Hierarchical tickets from Goal → Story → Feature → Task with drag-and-drop kanban. Burndown, workload, WBS/Gantt. One board from small teams to enterprise.",
+      "board": "3-column drag kanban",
+      "boardDesc": "Backlog sidebar, real-time filters & search",
+      "hierarchy": "4-level ticket types",
+      "hierarchyDesc": "Goal·Story·Feature·Task hierarchy",
+      "team": "OWNER/MEMBER/VIEWER",
+      "teamDesc": "Invite links, WBS/Gantt, team dashboard",
+      "notify": "Slack · Telegram",
+      "notifyDesc": "Auto deadline D-1 alerts, header bell dropdown",
+      "auth": "Google OAuth",
+      "authDesc": "NextAuth.js v5, workspace onboarding",
+      "cta": "Learn more about Tika →"
+    },
+    "markflow": {
+      "tag": "MARKDOWN · KNOWLEDGE · SYSTEM",
+      "title": "Build your team's knowledge structurally.",
+      "desc": "Markdown-based dual editor with document relation maps. Convert docx, ppt, html, pdf to markdown. Presentation mode and Workers/Pages publishing.",
+      "editor": "Dual Editor",
+      "editorDesc": "Left markdown, right preview. LaTeX & code formatter",
+      "convert": "All formats → MD",
+      "convertDesc": "docx, ppt, html, pdf auto-conversion",
+      "graph": "Document Relation Map",
+      "graphDesc": "Visualize prev/next/parent relationships at a glance",
+      "publish": "One-click Deploy",
+      "publishDesc": "Cloudflare Workers / GitHub Pages integration",
+      "ai": "Auto Document Analysis",
+      "aiDesc": "Summarize, verify, manage sources (Premium)",
+      "cta": "Learn more about MarkFlow →"
+    }
+  },
+  "why": {
+    "eyebrow": "Why Simplite",
+    "title": "Problems we solved.",
+    "aside": "There are many work tools. But most become 'tools for managing tools'.",
+    "p1_no": "PROBLEM 01",
+    "p1_bad": "\"What did I do yesterday?\" The question repeated every morning",
+    "p1_good": "Tika's hierarchical tickets connect scattered tasks by goals. Today's to-do and the team's quarterly goals move in the same structure.",
+    "p2_no": "PROBLEM 02",
+    "p2_bad": "\"Where was that document?\" Knowledge lost even with search",
+    "p2_good": "MarkFlow's relational graph visualizes document connections. Not just search — follow context through structure.",
+    "p3_no": "PROBLEM 03",
+    "p3_bad": "\"AI integrations are all paid/cloud\" Tools unusable in air-gapped environments",
+    "p3_good": "MCP native + on-premise LLM. Install on internal servers, attach your own models, complete AI automation within compliance."
+  },
+  "enterprise": {
+    "eyebrow": "Enterprise · Coming Soon",
+    "title": "On-premise, in your environment.",
+    "desc": "Install the open-source version on your internal infrastructure and extend with enterprise features via commercial license. From fully air-gapped deployment to in-house LLM and SSO integration.",
+    "items": [
+      { "title": "On-Premise Installation", "desc": "Full air-gapped deployment. Docker / Kubernetes / Helm Chart support." },
+      { "title": "Air-gap Compliance", "desc": "Works without external network. Finance & public sector certification in progress." },
+      { "title": "On-Premise LLM", "desc": "Attach your own open models for RAG·Agent automation. Data never leaves." },
+      { "title": "SSO / RBAC", "desc": "SAML·OIDC·LDAP support. Fine-grained role-based access. Full Audit Log." },
+      { "title": "RAG Pipeline Interface", "desc": "Configure & monitor the full Document → Embedding → Search → Generate pipeline via GUI." },
+      { "title": "MCP Native Agents", "desc": "All Tika·MarkFlow objects exposed via MCP. Connect naturally with your agents." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "License & Pricing",
+    "title": "Start free, scale when you need.",
+    "aside": "All core features are permanently free open-source. Team & Enterprise licenses add AI automation and enterprise features.",
+    "free": {
+      "name": "Free",
+      "tier": "OPEN SOURCE / SELF-HOST",
+      "price": "₩0",
+      "note": "Apache 2.0 · Free forever",
+      "features": ["Full Tika kanban board", "MarkFlow editor & publish", "Self-hosting · Docker deploy", "Unlimited personal & team use", "Community support (GitHub Issues)"],
+      "off": ["AI automation features", "SSO / RBAC"],
+      "cta": "Start on GitHub"
+    },
+    "team": {
+      "name": "Team",
+      "tier": "CLOUD SAAS · PER SEAT",
+      "price": "₩9,900",
+      "priceUnit": "/ user · mo",
+      "note": "In development · Join beta waitlist",
+      "badge": "RECOMMENDED",
+      "features": ["Everything in Free", "AI document analysis & summary", "AI agent ticket auto-creation", "Slack / Telegram advanced alerts", "Team dashboard · burndown · workload", "MCP external connections (Claude·Cursor)", "Email-based tech support"],
+      "cta": "Join Beta"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tier": "ON-PREMISE · LICENSED",
+      "price": "Contact",
+      "note": "On-premise · Annual license",
+      "features": ["Everything in Team", "Full air-gapped On-Premise", "On-premise LLM integration", "SSO / RBAC / Audit Log", "RAG Pipeline GUI", "Air-gap compliance support", "Dedicated SA · SLA contract"],
+      "cta": "Contact Sales"
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions.",
+    "items": [
+      { "q": "Is the Free (open-source) version truly free forever?", "a": "Yes. Tika and MarkFlow core are Apache 2.0 — personal, commercial, modification, and redistribution are all free. No cost for self-hosting, and community support is via GitHub Issues." },
+      { "q": "When will Team / Enterprise plans launch?", "a": "Currently in development, targeting H1 2026 beta launch. Register on the contact page to get priority access." },
+      { "q": "Can I use Tika and MarkFlow separately?", "a": "Each is designed as an independent product. However, thanks to MCP-native architecture, using both connects MarkFlow documents with Tika tickets naturally." },
+      { "q": "Which on-premise LLM models are supported?", "a": "Ollama and vLLM-based open models (Llama 3, Qwen, DeepSeek, etc.) are supported by default. Any OpenAI-compatible API endpoint can be connected." },
+      { "q": "Can I migrate from existing tools (Jira, Notion, etc.)?", "a": "Tika supports Jira CSV Import, and MarkFlow supports bulk MD conversion from Notion, Confluence, docx, and pdf. Enterprise plan includes custom migration support." },
+      { "q": "What exactly does MCP native mean?", "a": "All tickets, documents, and workspace objects are exposed via Model Context Protocol spec. Claude Desktop, Cursor, and your own AI agents can directly access and modify Simplite data." }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Get Started",
+    "title": "Simply manage your knowledge and tasks.",
+    "desc": "Start with open source in 5 minutes. Enterprise gets a dedicated team.",
+    "cta_github": "Start on GitHub",
+    "cta_contact": "Contact Sales"
+  },
+  "footer": {
+    "desc": "Write simply, manage efficiently. Intuitive knowledge & task management suite.",
+    "est": "SIMPLITE.NET · EST. 2026",
+    "products": "Products",
+    "resources": "Resources",
+    "contact": "Contact",
+    "copyright": "© 2026 SIMPLITE",
+    "tagline": "APACHE 2.0 · MCP NATIVE · ON-PREMISE READY"
+  },
+  "contact": {
+    "eyebrow": "Contact Simplite",
+    "title": "How can we help you",
+    "desc": "Licensing, deployment, technical questions — choose the right channel. We respond within 24 business hours.",
+    "tab_sales": "● Sales · Deployment",
+    "tab_dev": "● Developer · Technical",
+    "sales": {
+      "title": "Team · Enterprise consultation.",
+      "desc": "Tell us about your company, team size, and use case. We'll prepare a tailored plan and on-premise quote.",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "products_label": "Products of interest (multi-select)",
+      "size_label": "Team size",
+      "plan_label": "Plan interest",
+      "message_label": "Message",
+      "message_placeholder": "Current tools, migration scope, compliance requirements, etc.",
+      "submit": "Send inquiry →",
+      "submit_note": "Response within 24 business hours",
+      "success": "✓ Received. Our team will reach out via email shortly."
+    },
+    "dev": {
+      "title": "Developer · Technical inquiry.",
+      "desc": "Bugs, feature requests, MCP integration, contributions. GitHub Issues are fastest, but send sensitive items here.",
+      "name": "Name / Handle",
+      "email": "Email",
+      "target_label": "Target product",
+      "topic_label": "Inquiry type",
+      "issue_url": "GitHub Issue URL (optional)",
+      "issue_placeholder": "https://github.com/...",
+      "message_label": "Details",
+      "message_placeholder": "Repro steps, environment, expected vs actual behavior, etc.",
+      "submit": "Send message →",
+      "submit_note": "Security issues: send directly to dev@simplite.net",
+      "success": "✓ Received. Our engineering team will respond shortly."
+    },
+    "extra_eyebrow": "Other Channels",
+    "extra_title": "Other channels.",
+    "partnership": { "title": "Partnership", "desc": "SI, reseller, and technology partnership proposals are welcome." },
+    "press": { "title": "Press · Media", "desc": "Interview, coverage, and logo usage inquiries. Media kit available on request." },
+    "security": { "title": "Security", "desc": "CVE reports and vulnerability disclosures are handled with priority under responsible disclosure." }
+  },
+  "tika": {
+    "crumb": "SIMPLITE / PRODUCTS / TIKA",
+    "badge": "● TICKET-BASED KANBAN BOARD",
+    "title": "Plan Simply. Ship Boldly.",
+    "sub": "Hierarchical kanban for goal-driven work. Connect scattered tasks from Goal→Story→Feature→Task, and move the entire team on the same structure.",
+    "demo_eyebrow": "Try it · Drag the cards",
+    "demo_title": "Move them with real drag and drop.",
+    "demo_aside": "The cards below are actually draggable. All Tika kanban interactions respond instantly like this.",
+    "demo_note": "↑ Grab a card and drag it to another column",
+    "hier_eyebrow": "Hierarchy",
+    "hier_title": "Goal → Story → Feature → Task 4-level hierarchical linking.",
+    "hier_desc": "From quarterly goals (Goal) to today's tasks (Task), everything lives in the same structure. See the parent goal from any ticket, and progress from any goal.",
+    "feat_eyebrow": "Feature Set",
+    "feat_title": "Enough for small teams, powerful enough for enterprise.",
+    "feat_items": [
+      { "title": "Kanban Board + Drag & Drop", "desc": "Backlog sidebar with TODO / In Progress / Done 3-column. Card moves reflect instantly with real-time filters & search." },
+      { "title": "Ticket CRUD · 4 Types", "desc": "Goal·Story·Feature·Task. Priority, dates, checklists, labels, comments, assignees — all in one ticket." },
+      { "title": "Workspace & Permissions", "desc": "OWNER / MEMBER / VIEWER 3-tier roles. 24h expiring invite links for safe external collaboration." },
+      { "title": "WBS · Gantt Chart", "desc": "Timeline-based visualization for progress at a glance. Team dashboards include burndown and workload." },
+      { "title": "Slack · Telegram Alerts", "desc": "Channel integration with auto D-1 deadline alerts. In-app header bell dropdown so nothing is missed." },
+      { "title": "Search · Advanced Filters", "desc": "Real-time search and filter chips. Save label/priority/date range combos as views and share across teams." },
+      { "title": "Google OAuth · Onboarding", "desc": "Secure login via NextAuth.js v5. Automatic workspace select/create flow on first entry." },
+      { "title": "MCP Native", "desc": "All tickets & workspaces exposed via MCP. Claude Desktop, Cursor, and external agents access Tika data directly." },
+      { "title": "AI Automation", "desc": "Auto-create tickets from meeting notes, suggest priorities, detect burndown anomalies. Available progressively in Team plan." }
+    ],
+    "shots_eyebrow": "Screenshots",
+    "shots_title": "Actual screens.",
+    "cta_eyebrow": "Get Tika",
+    "cta_title": "Plan simply. Ship boldly.",
+    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment."
+  },
+  "markflow": {
+    "crumb": "SIMPLITE / PRODUCTS / MARKFLOW",
+    "badge": "● MARKDOWN KNOWLEDGE SYSTEM",
+    "title": "Write in Markdown. Think in Context.",
+    "sub": "Build team knowledge in markdown, connect with relations, publish anywhere. A knowledge management system with document relation maps and dual editor.",
+    "dual_eyebrow": "Dual Editor",
+    "dual_title": "Markdown that renders as you write.",
+    "dual_aside": "Left side writes, right side renders. LaTeX formulas, code highlights, internal document links ([[]]) — all in real-time.",
+    "map_eyebrow": "Document Map",
+    "map_title": "What it means to see documents as a graph.",
+    "map_aside": "Search already exists everywhere. MarkFlow visualizes prev/next/parent/related relations, letting you navigate on context.",
+    "convert_eyebrow": "Universal Convert",
+    "convert_title": "Every format to Markdown.",
+    "convert_aside": "No need to abandon existing documents. docx, ppt, html, pdf convert to markdown while preserving structure.",
+    "feat_eyebrow": "Feature Set",
+    "feat_title": "Everything you need for knowledge management.",
+    "feat_items": [
+      { "title": "Dual Editor", "desc": "Left markdown, right preview. Both sides scroll together for natural editing of long documents." },
+      { "title": "Presentation Mode", "desc": "Convert written documents directly to slides. Create documents and presentations from the same source." },
+      { "title": "LaTeX · Code Formatter", "desc": "Formulas, code blocks, diagrams, tables. Advanced formatting for academic & technical documents built-in." },
+      { "title": "Document Relation Map", "desc": "Prev/next/parent/related documents visualized as a graph. Navigate on context." },
+      { "title": "Image · File Upload", "desc": "Upload to built-in storage with just a drag. Inserted as markdown syntax the moment you drop." },
+      { "title": "Team · Org Permissions", "desc": "Workspace-level management, folder-level access. Mix public and private documents." },
+      { "title": "One-click Publish", "desc": "Cloudflare Workers · GitHub Pages integration. Set up once, then just press deploy." },
+      { "title": "Internal Links · Tree Structure", "desc": "Build manual/help sites as document trees and publish directly. No separate static site generator needed." },
+      { "title": "AI Document Analysis", "desc": "Auto summary, verification, source management. Dedicated AI assistant for team knowledge base in Enterprise plan." }
+    ],
+    "shots_eyebrow": "Screenshots",
+    "shots_title": "Actual screens.",
+    "cta_eyebrow": "Get MarkFlow",
+    "cta_title": "Write in Markdown. Think in Context.",
+    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment."
+  }
+}

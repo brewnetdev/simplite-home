@@ -1,0 +1,293 @@
+{
+  "nav": {
+    "products": "Products",
+    "tika": "Tika",
+    "markflow": "MarkFlow",
+    "enterprise": "Enterprise",
+    "pricing": "가격",
+    "contact": "문의",
+    "github": "GitHub"
+  },
+  "hero": {
+    "eyebrow": "Simplite Suite · 2026",
+    "title1": "쉽게 쓰고,",
+    "title2": "효율적으로",
+    "title3": "해내다.",
+    "subtitle": "쉽게 쓰고, 효율적으로 해내다.",
+    "description": "Simplite는 지식과 할 일을 가장 단순한 형태로 다루는 제품군입니다. Tika로 티켓과 칸반을, MarkFlow로 마크다운 기반 지식을 관리하고, AI Agent와 MCP로 자동화합니다.",
+    "cta_products": "제품 둘러보기",
+    "cta_contact": "도입 문의",
+    "meta_oss": "Apache 2.0 OSS",
+    "meta_mcp": "MCP NATIVE",
+    "meta_onprem": "ON-PREMISE READY"
+  },
+  "logoStrip": {
+    "items": ["Open Source", "Apache 2.0 License", "MCP Native", "AI Agent Ready", "On-Premise Compliant", "SSO / RBAC"]
+  },
+  "philosophy": {
+    "eyebrow": "Our Philosophy",
+    "title": "단순함이 생산성이다",
+    "description": "복잡한 도구는 더 많은 일을 만들어내지만, 단순한 도구는 더 많은 결과를 만들어냅니다. Simplite는 \"쉽게 쓰고, 많이 이룬다\"는 철학 위에 설계되었습니다.",
+    "pillar1_no": "01 / EASY",
+    "pillar1_title": "쉽게 쓴다",
+    "pillar1_desc": "학습 곡선을 없애고, 첫 화면에서 바로 기록하고 정리할 수 있도록 설계했습니다. 마크다운, 칸반 — 모두 익숙한 포맷 그대로.",
+    "pillar2_no": "02 / MODULAR",
+    "pillar2_title": "조립해 쓴다",
+    "pillar2_desc": "개인은 개인답게, 팀은 팀답게, 기업은 기업답게. 오픈소스 코어 위에 AI와 자동화 기능을 블록처럼 조립하여 필요한 만큼 확장합니다.",
+    "pillar3_no": "03 / OWNERSHIP",
+    "pillar3_title": "내 손에 둔다",
+    "pillar3_desc": "클라우드도 좋지만, 자체 서버에 두는 것도 좋습니다. On-premise와 SaaS를 모두 지원하며 데이터 주권은 언제나 사용자에게.",
+    "pillar4_no": "04 / SIMPLICITY",
+    "pillar4_title": "따로 배울 필요 없이",
+    "pillar4_desc": "처음 여는 사람도 5분 안에 자기 흐름을 찾을 수 있어야 합니다. Simplite의 모든 제품은 1페이지 매뉴얼 원칙 위에서 설계됩니다.",
+    "pillar5_no": "05 / OPENNESS",
+    "pillar5_title": "열려 있는 기본값",
+    "pillar5_desc": "코어 기능은 Apache 2.0으로 공개되어, 직접 수정·자가호스팅·상업적 이용까지 자유롭습니다. 잠금이 아니라 신뢰로 시작합니다.",
+    "pillar6_no": "06 / AI-NATIVE",
+    "pillar6_title": "MCP와 에이전트 위에서",
+    "pillar6_desc": "모든 데이터와 업무 단위는 MCP 네이티브로 구조화되어, 당신의 에이전트와 업무 흐름에 자연스럽게 연결됩니다."
+  },
+  "products": {
+    "eyebrow": "Products · 2 of N",
+    "title": "Simplite가 만든 두 가지 도구.",
+    "titleSuffix": "더 많은 제품이 곧 합류합니다.",
+    "aside": "지식과 업무는 연결되어 있습니다. 우리는 그 두 축을 각각 Tika와 MarkFlow로 분리해 구축하고, 함께 쓸 때 완성되도록 설계합니다.",
+    "tika": {
+      "tag": "TICKET · BASED · KANBAN",
+      "title": "흩어진 할 일을 목표 단위로 묶어 일하세요.",
+      "desc": "Goal → Story → Feature → Task로 연결되는 계층형 티켓과 드래그 앤 드롭 칸반. 번다운, 워크로드, WBS/간트까지. 작은 팀부터 엔터프라이즈까지 하나의 보드로.",
+      "board": "3칼럼 드래그 칸반",
+      "boardDesc": "백로그 사이드바, 실시간 필터·검색",
+      "hierarchy": "4단계 티켓 타입",
+      "hierarchyDesc": "Goal·Story·Feature·Task 상하위 연결",
+      "team": "OWNER/MEMBER/VIEWER",
+      "teamDesc": "초대 링크, WBS/간트, 팀 대시보드",
+      "notify": "Slack·Telegram",
+      "notifyDesc": "마감 D-1 자동 알림, 헤더 벨 드롭다운",
+      "auth": "Google OAuth",
+      "authDesc": "NextAuth.js v5, 워크스페이스 온보딩",
+      "cta": "Tika 자세히 보기 →"
+    },
+    "markflow": {
+      "tag": "MARKDOWN · KNOWLEDGE · SYSTEM",
+      "title": "팀의 지식을 구조로 쌓으세요.",
+      "desc": "마크다운 기반 듀얼 에디터와 문서 관계 맵. docx·ppt·html·pdf를 모두 마크다운으로 변환하고, 문서 간 연결을 한눈에. 프리젠테이션 모드와 Workers/Pages 퍼블리시까지.",
+      "editor": "듀얼 에디터",
+      "editorDesc": "좌측 마크다운, 우측 프리뷰. LaTeX·코드 포매터",
+      "convert": "모든 포맷 → MD",
+      "convertDesc": "docx, ppt, html, pdf 자동 변환",
+      "graph": "문서 연결 맵",
+      "graphDesc": "이전/다음/상위 관계를 한눈에 보는 시각화",
+      "publish": "원클릭 배포",
+      "publishDesc": "Cloudflare Workers / GitHub Pages 연동",
+      "ai": "문서 자동 분석",
+      "aiDesc": "요약·검증·출처 관리 (프리미엄)",
+      "cta": "MarkFlow 자세히 보기 →"
+    }
+  },
+  "why": {
+    "eyebrow": "Why Simplite",
+    "title": "우리가 해결한 불편들.",
+    "aside": "업무 도구는 많습니다. 그러나 대부분 '도구를 관리하기 위한 도구'로 변해버립니다.",
+    "p1_no": "PROBLEM 01",
+    "p1_bad": "\"어제 뭐 했지?\" 매일 아침 반복되는 질문",
+    "p1_good": "Tika의 계층형 티켓이 흩어진 업무를 목표 단위로 연결합니다. 개인의 오늘 할 일과 팀의 이번 분기 목표가 같은 구조 안에서 움직입니다.",
+    "p2_no": "PROBLEM 02",
+    "p2_bad": "\"그 문서 어디 있었지?\" 검색해도 나오지 않는 지식",
+    "p2_good": "MarkFlow의 관계형 그래프가 문서 간 연결을 시각화합니다. 단일 검색이 아니라, 구조 위에서 맥락을 따라갑니다.",
+    "p3_no": "PROBLEM 03",
+    "p3_bad": "\"AI 연동은 다 유료·클라우드\" 망분리 환경에선 못 쓰는 도구들",
+    "p3_good": "MCP 네이티브 + 온프레미스 LLM. 내부 서버에 설치하고 사내 모델을 붙여 컴플라이언스 안에서 AI 자동화를 완성합니다."
+  },
+  "enterprise": {
+    "eyebrow": "Enterprise · Coming Soon",
+    "title": "설치형으로, 당신의 환경에.",
+    "desc": "오픈소스 버전을 그대로 내부 인프라에 설치하고, 상용 라이선스로 엔터프라이즈 기능을 확장하세요. 망분리·금융·공공 환경을 위한 완전 내부망 배포부터, 사내 LLM과 SSO 연동까지 한 번에.",
+    "items": [
+      { "title": "On-Premise 설치형", "desc": "완전한 내부망 배포. Docker / Kubernetes / Helm Chart 전 환경 지원." },
+      { "title": "망분리 컴플라이언스", "desc": "외부 네트워크 단절 상태에서도 동작. 금융·공공 보안 환경 인증 진행 중." },
+      { "title": "온프레미스 LLM 연동", "desc": "사내 오픈 모델을 그대로 붙여 RAG·Agent 자동화. 데이터는 외부로 나가지 않습니다." },
+      { "title": "SSO / RBAC", "desc": "SAML·OIDC·LDAP 지원. 역할 기반 세밀한 권한 관리. Audit Log 완비." },
+      { "title": "RAG 파이프라인 인터페이스", "desc": "문서 → 임베딩 → 검색 → 생성의 전 과정을 GUI로 구성·모니터링." },
+      { "title": "MCP 네이티브 에이전트", "desc": "Tika·MarkFlow의 모든 오브젝트가 MCP로 노출. 자사 에이전트와 자연스럽게 연결." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "License & Pricing",
+    "title": "자유롭게 시작하고, 필요할 때 확장하세요.",
+    "aside": "모든 코어 기능은 오픈소스로 영구 무료. 팀·엔터프라이즈 라이선스는 AI 자동화와 엔터프라이즈 기능을 추가합니다.",
+    "free": {
+      "name": "Free",
+      "tier": "OPEN SOURCE / SELF-HOST",
+      "price": "₩0",
+      "note": "Apache 2.0 · 영구 무료",
+      "features": ["Tika 칸반 보드 전체 기능", "MarkFlow 에디터·퍼블리시", "자가 호스팅 · Docker 배포", "무제한 개인·팀 사용", "커뮤니티 지원 (GitHub Issues)"],
+      "off": ["AI 자동화 기능", "SSO / RBAC"],
+      "cta": "GitHub에서 시작"
+    },
+    "team": {
+      "name": "Team",
+      "tier": "CLOUD SAAS · PER SEAT",
+      "price": "₩9,900",
+      "priceUnit": "/ user · mo",
+      "note": "개발 중 · 베타 대기 신청",
+      "badge": "RECOMMENDED",
+      "features": ["Free 모든 기능", "AI 문서 자동 분석·요약", "AI 에이전트 티켓 자동 생성", "Slack / Telegram 고급 알림", "팀 대시보드·번다운·워크로드", "MCP 외부 연결 (Claude·Cursor)", "이메일 기반 기술 지원"],
+      "cta": "베타 신청"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tier": "ON-PREMISE · LICENSED",
+      "price": "문의",
+      "note": "설치형 · 연 단위 라이선스",
+      "features": ["Team 모든 기능", "완전 내부망 On-Premise", "온프레미스 LLM 연동", "SSO / RBAC / Audit Log", "RAG 파이프라인 GUI", "망분리 컴플라이언스 지원", "전담 SA · SLA 계약"],
+      "cta": "도입 상담"
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "자주 묻는 질문.",
+    "items": [
+      { "q": "Free(오픈소스) 버전은 정말 영구 무료인가요?", "a": "네. Tika와 MarkFlow의 코어는 Apache 2.0으로 공개되어 있으며, 개인·상업적 이용·수정·재배포 모두 자유롭습니다. 자가호스팅 시 별도 비용이 없으며, 커뮤니티 지원은 GitHub Issues에서 이뤄집니다." },
+      { "q": "Team / Enterprise 플랜은 언제 출시되나요?", "a": "현재 고도화 개발 중이며, 2026년 상반기 베타 출시를 목표로 진행하고 있습니다. 문의 페이지에서 대기 리스트에 등록하시면 우선 순위로 안내드립니다." },
+      { "q": "Tika와 MarkFlow는 따로 써도 되나요?", "a": "각각 독립 제품으로 설계되어 단독 사용이 가능합니다. 다만 MCP 네이티브 구조 덕분에, 둘을 함께 쓰면 MarkFlow의 문서와 Tika의 티켓이 자연스럽게 연결되어 업무 컨텍스트를 유지할 수 있습니다." },
+      { "q": "온프레미스 LLM은 어떤 모델을 지원하나요?", "a": "Ollama, vLLM 기반의 오픈 모델(Llama 3, Qwen, DeepSeek 등)을 기본 지원합니다. OpenAI 호환 API 엔드포인트라면 무엇이든 연결 가능하며, 사내 인프라 구축도 도와드립니다." },
+      { "q": "기존 업무 도구(Jira, Notion 등)에서 마이그레이션이 가능한가요?", "a": "Tika는 Jira CSV Import를, MarkFlow는 Notion·Confluence·docx·pdf의 MD 일괄 변환을 지원합니다. Enterprise 플랜은 커스텀 마이그레이션 지원을 포함합니다." },
+      { "q": "MCP 네이티브는 정확히 무엇을 의미하나요?", "a": "모든 티켓·문서·워크스페이스 오브젝트가 Model Context Protocol 스펙으로 노출된다는 의미입니다. Claude Desktop, Cursor, 자사 AI 에이전트에서 Simplite 데이터에 직접 접근·수정할 수 있습니다." }
+    ]
+  },
+  "roadmap": {
+    "eyebrow": "Roadmap",
+    "title": "어디까지 왔고, 어디로 갑니다",
+    "description": "현재 진행 중인 개발 단계를 투명하게 공유합니다.",
+    "items": [
+      { "status": "done", "tag": "● Shipped · 2025", "title": "tika · markflow 오픈소스 배포", "desc": "Apache 2.0 라이선스로 코어 기능 무료 배포 완료. 셀프 호스팅 가이드와 Docker Compose 템플릿 제공." },
+      { "status": "progress", "tag": "◐ In Progress · 2026 Q2", "title": "Team Plan · AI 자동화 고도화", "desc": "AI 자동 티켓 분류, 지식 그래프 생성, 백링크 자동화 기능 개발 중. SSO 및 관리형 SaaS 준비." },
+      { "status": "planned", "tag": "○ Planned · 2026 Q3", "title": "Enterprise Plan · SAML & 감사 로그 고급", "desc": "대규모 조직을 위한 엔터프라이즈 기능. SAML, LDAP, SCIM 프로비저닝 및 상세 감사 로그." },
+      { "status": "planned", "tag": "○ Planned · 2026 Q4+", "title": "tika ↔ markflow 완전 양방향 통합", "desc": "티켓과 노트를 하나의 워크스페이스에서 무결하게 다룰 수 있도록. AI 에이전트가 전체 컨텍스트를 활용하도록 확장." }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Get Started",
+    "title": "Simply manage your knowledge and tasks.",
+    "desc": "오픈소스로 5분 안에 시작하세요. 엔터프라이즈는 전담팀이 함께합니다.",
+    "cta_github": "GitHub에서 시작",
+    "cta_contact": "도입 문의"
+  },
+  "footer": {
+    "desc": "쉽게 쓰고, 효율적으로 관리하세요. 따로 배울 필요 없는 직관적인 지식·업무 관리 도구군.",
+    "est": "SIMPLITE.NET · EST. 2026",
+    "products": "제품",
+    "resources": "리소스",
+    "contact": "연락",
+    "copyright": "© 2026 SIMPLITE",
+    "tagline": "APACHE 2.0 · MCP NATIVE · ON-PREMISE READY"
+  },
+  "contact": {
+    "eyebrow": "Contact Simplite",
+    "title": "How can we help you",
+    "desc": "도입, 라이선스, 기술적 질문까지. 각 창구로 나누어 두었으니 용도에 맞게 선택해 주세요. 영업일 기준 24시간 내 회신드립니다.",
+    "tab_sales": "● 구매 · 도입 문의",
+    "tab_dev": "● 개발자 · 기술 문의",
+    "sales": {
+      "title": "Team · Enterprise 도입 상담.",
+      "desc": "회사·인원·예상 사용처를 알려주시면, 담당자가 적합한 플랜과 온프레미스 구축 견적을 준비해 연락드립니다.",
+      "name": "이름",
+      "company": "회사명",
+      "email": "이메일",
+      "phone": "연락처 (선택)",
+      "products_label": "관심 제품 (복수 선택)",
+      "size_label": "도입 규모",
+      "plan_label": "플랜 관심",
+      "message_label": "문의 내용",
+      "message_placeholder": "현재 사용 중인 도구, 마이그레이션 범위, 특별한 컴플라이언스 요구사항 등을 자유롭게 적어주세요.",
+      "submit": "상담 요청 보내기 →",
+      "submit_note": "영업일 24h 내 회신",
+      "success": "✓ 접수되었습니다. 담당자가 곧 이메일로 회신드립니다."
+    },
+    "dev": {
+      "title": "개발자 · 기술 문의.",
+      "desc": "버그, 기능 제안, MCP 연동, 컨트리뷰션까지. GitHub Issues가 빠르지만, 공개하기 어려운 내용은 이곳으로 보내주세요.",
+      "name": "이름 · 핸들",
+      "email": "이메일",
+      "target_label": "대상 제품",
+      "topic_label": "문의 유형",
+      "issue_url": "GitHub 이슈 URL (선택)",
+      "issue_placeholder": "https://github.com/...",
+      "message_label": "상세 내용",
+      "message_placeholder": "재현 단계, 환경, 예상 동작 vs 실제 동작 등",
+      "submit": "메시지 보내기 →",
+      "submit_note": "보안 이슈는 dev@simplite.net 직접 발송 권장",
+      "success": "✓ 접수되었습니다. 기술팀이 곧 회신드립니다."
+    },
+    "extra_eyebrow": "Other Channels",
+    "extra_title": "그 외 채널.",
+    "partnership": { "title": "Partnership", "desc": "SI · 리셀러 · 기술 파트너십 등 협업 제안을 환영합니다. 간단한 소개와 함께 연락 주세요." },
+    "press": { "title": "Press · Media", "desc": "취재·인터뷰·로고 사용 등 언론 관련 문의. 미디어 키트는 요청 시 보내드립니다." },
+    "security": { "title": "Security", "desc": "CVE 제보, 취약점 리포트는 책임 공개(disclosure) 원칙에 따라 우선 처리됩니다." }
+  },
+  "tika": {
+    "crumb": "SIMPLITE / PRODUCTS / TIKA",
+    "badge": "● TICKET-BASED KANBAN BOARD",
+    "title": "Plan Simply. Ship Boldly.",
+    "sub": "목표 중심의 업무를 위한 계층형 칸반. 흩어진 할 일을 Goal→Story→Feature→Task로 연결하고, 팀 전체가 같은 구조 위에서 움직입니다.",
+    "demo_eyebrow": "Try it · 드래그 해보세요",
+    "demo_title": "실제 드래그 앤 드롭으로 움직여보세요.",
+    "demo_aside": "아래 카드는 실제로 드래그 가능한 데모입니다. Tika의 모든 칸반 인터랙션은 이처럼 즉각적으로 반응합니다.",
+    "demo_note": "↑ 카드를 잡고 다른 칸으로 드래그 하세요",
+    "hier_eyebrow": "Hierarchy",
+    "hier_title": "Goal → Story → Feature → Task 4단계 계층형 연결.",
+    "hier_desc": "분기 목표(Goal)부터 오늘의 할 일(Task)까지 같은 구조 안에 놓입니다. 티켓 하나를 보면 상위 목표가, 목표를 보면 하위 진행 상황이 한눈에 들어옵니다.",
+    "feat_eyebrow": "Feature Set",
+    "feat_title": "작은 팀에게도 충분하고, 큰 팀에게도 부족하지 않은.",
+    "feat_items": [
+      { "title": "칸반 보드 + 드래그 앤 드롭", "desc": "Backlog 사이드바와 TODO / In Progress / Done 3칼럼. 카드 이동·정렬이 즉각 반영되며 실시간 필터·검색도 한 자리에." },
+      { "title": "티켓 CRUD · 4가지 타입", "desc": "Goal·Story·Feature·Task. 우선순위, 시작·마감일, 체크리스트, 라벨, 댓글, 담당자 배정까지 티켓 단위에 모두 담깁니다." },
+      { "title": "워크스페이스 & 권한", "desc": "OWNER / MEMBER / VIEWER 3단 역할. 24시간 만료 초대 링크로 외부 협업도 안전하게." },
+      { "title": "WBS · 간트 차트", "desc": "일정 기반 시각화로 목표 대비 현재 진행률을 한눈에. 팀 대시보드에는 번다운과 워크로드도 함께." },
+      { "title": "Slack · Telegram 알림", "desc": "채널 연동과 마감 D-1 자동 알림. 헤더 벨 드롭다운으로 앱 내에서도 놓치지 않습니다." },
+      { "title": "검색 · 고급 필터", "desc": "실시간 검색과 필터 칩. 라벨·우선순위·날짜 범위를 조합한 뷰를 저장해 팀별로 공유하세요." },
+      { "title": "Google OAuth · 온보딩", "desc": "NextAuth.js v5 기반 안전한 로그인. 첫 진입 시 워크스페이스 선택·생성 흐름까지 자동으로." },
+      { "title": "MCP 네이티브", "desc": "모든 티켓·워크스페이스가 MCP로 노출. Claude Desktop, Cursor 등 외부 에이전트가 Tika 데이터에 직접 접근합니다." },
+      { "title": "AI 자동화", "desc": "회의록에서 티켓 자동 생성, 우선순위 제안, 번다운 이상 감지. 팀 플랜에서 점진적으로 제공됩니다." }
+    ],
+    "shots_eyebrow": "Screenshots",
+    "shots_title": "실제 화면.",
+    "cta_eyebrow": "Get Tika",
+    "cta_title": "Plan simply. Ship boldly.",
+    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요."
+  },
+  "markflow": {
+    "crumb": "SIMPLITE / PRODUCTS / MARKFLOW",
+    "badge": "● MARKDOWN KNOWLEDGE SYSTEM",
+    "title": "Write in Markdown. Think in Context.",
+    "sub": "팀의 지식을 마크다운으로 쌓고, 관계로 연결하고, 어디로든 퍼블리시하세요. 문서 간 구조를 시각화하는 관계 맵과 듀얼 에디터로 설계된 지식 관리 시스템.",
+    "dual_eyebrow": "Dual Editor",
+    "dual_title": "쓰는 대로 보이는 마크다운.",
+    "dual_aside": "왼쪽은 쓰기, 오른쪽은 결과. LaTeX 수식, 코드 하이라이트, 내부 문서 링크([[]])까지 실시간으로 렌더링됩니다.",
+    "map_eyebrow": "Document Map",
+    "map_title": "문서를 그래프로 본다는 것.",
+    "map_aside": "검색은 이미 많습니다. MarkFlow는 이전/다음/상위/연관 관계를 시각화해, 지식의 맥락 위에서 이동할 수 있게 합니다.",
+    "convert_eyebrow": "Universal Convert",
+    "convert_title": "모든 포맷을 Markdown으로.",
+    "convert_aside": "기존 문서 자산을 버릴 필요가 없습니다. docx·ppt·html·pdf가 마크다운으로 구조를 유지한 채 변환됩니다.",
+    "feat_eyebrow": "Feature Set",
+    "feat_title": "지식 관리에 필요한 모든 것.",
+    "feat_items": [
+      { "title": "듀얼 에디터", "desc": "왼쪽 마크다운, 오른쪽 프리뷰. 양쪽이 함께 스크롤되어 긴 문서도 편집이 자연스럽습니다." },
+      { "title": "프리젠테이션 모드", "desc": "작성한 문서를 그대로 슬라이드로 변환. 문서와 발표 자료를 같은 소스에서 만듭니다." },
+      { "title": "LaTeX · 코드 포매터", "desc": "수식, 코드 블록, 다이어그램, 표까지. 학술·기술 문서에 필요한 고급 포매팅을 기본 제공합니다." },
+      { "title": "문서 관계 맵", "desc": "이전·다음·상위·연관 문서가 그래프로 시각화. 지식의 맥락 위에서 이동합니다." },
+      { "title": "이미지 · 첨부 업로드", "desc": "드래그만으로 자체 스토리지에 업로드. 드롭한 순간 마크다운 문법으로 본문에 삽입됩니다." },
+      { "title": "팀 · 조직 권한", "desc": "워크스페이스 단위의 관리, 폴더별 접근 권한. 공개/비공개 문서를 섞어 운영할 수 있습니다." },
+      { "title": "원클릭 퍼블리시", "desc": "Cloudflare Workers · GitHub Pages 연동. 한 번 설정하면 이후엔 배포 버튼만 누르면 됩니다." },
+      { "title": "내부 링크 · 트리 구성", "desc": "매뉴얼·도움말 사이트를 문서 트리로 바로 구성하고 퍼블리시. 별도 정적 사이트 생성기가 필요 없습니다." },
+      { "title": "AI 문서 분석", "desc": "자동 요약·검증·출처 관리. 팀 지식 베이스에 연결된 전용 AI 어시스턴트를 엔터프라이즈 플랜에서 지원." }
+    ],
+    "shots_eyebrow": "Screenshots",
+    "shots_title": "실제 화면.",
+    "cta_eyebrow": "Get MarkFlow",
+    "cta_title": "Write in Markdown. Think in Context.",
+    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요."
+  }
+}

@@ -1,0 +1,6 @@
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.shotCard { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.cap { padding: 14px 18px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; }
+.name { font-family: var(--font-serif); color: var(--green); font-style: italic; font-size: 17px; }
+.tag { font-family: var(--font-mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+@media (max-width: 900px) { .shots { grid-template-columns: 1fr; } }

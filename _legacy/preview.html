@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Simplite 로고 미리보기</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #F7F9F8;
+    color: #1B5E3F;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #1B5E3F;
+  }
+  .subtitle { color: #2A9D8F; margin-bottom: 40px; font-size: 14px; }
+  .section {
+    background: white;
+    border: 1px solid #E1E8E3;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(27, 94, 63, 0.04);
+  }
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B5E3F;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #52B788;
+    display: inline-block;
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+  .logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-item .label {
+    font-size: 11px;
+    color: #6B8A7A;
+    font-family: 'SF Mono', Consolas, monospace;
+  }
+  .bg-white { background: #FFFFFF; padding: 20px; border-radius: 8px; border: 1px dashed #D1DDD4; }
+  .bg-dark { background: #0E3D28; padding: 20px; border-radius: 8px; }
+  .bg-cream { background: #F5F0E8; padding: 20px; border-radius: 8px; }
+  .bg-gradient {
+    background: linear-gradient(135deg, #1B5E3F 0%, #2A9D8F 100%);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .favicon-demo {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .fav-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .browser-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E8F0EA;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #D1DDD4;
+    border-bottom: none;
+    font-size: 13px;
+    color: #1B5E3F;
+  }
+  .browser-tab img { width: 16px; height: 16px; }
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 13px;
+  }
+  .spec-table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #F0F5F2;
+    color: #1B5E3F;
+    font-weight: 600;
+    border-bottom: 2px solid #52B788;
+  }
+  .spec-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #E8F0EA;
+    color: #264653;
+  }
+  .spec-table code {
+    background: #F0F5F2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #1B5E3F;
+  }
+  .color-palette {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    font-family: 'SF Mono', Consolas, monospace;
+    color: #6B8A7A;
+  }
+  .swatch .chip {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Simplite 로고 시스템</h1>
+  <p class="subtitle">테트리스 조립형 타이포그래피 · 펜슬 & 노트 모티프 · 딥 그린 팔레트</p>
+
+  <!-- 메인 로고 -->
+  <div class="section">
+    <div class="section-title">메인 로고 (160 × 80)</div>
+    <div class="logo-row">
+      <div class="logo-item">
+        <div class="bg-white"><img src="../public/assets/simplite-logo.svg" width="160" height="80" alt="Simplite"></div>
+        <div class="label">on white</div>
+      </div>
+      <div class="logo-item">
+        <div class="bg-cream"><img src="../public/assets/simplite-logo.svg" width="160" height="80" alt="Simplite"></div>
+        <div class="label">on cream</div>
+      </div>
+      <div class="logo-item">
+        <div class="bg-gradient"><img src="../public/assets/simplite-logo.svg" width="160" height="80" alt="Simplite" style="filter: brightness(1.3);"></div>
+        <div class="label">on gradient</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 확대본 -->
+  <div class="section">
+    <div class="section-title">확대 미리보기 (2x, 5x)</div>
+    <div class="logo-row">
+      <div class="logo-item">
+        <div class="bg-white"><img src="../public/assets/simplite-logo.svg" width="320" height="160" alt="Simplite 2x"></div>
+        <div class="label">2x (320 × 160)</div>
+      </div>
+    </div>
+    <div class="logo-row">
+      <div class="logo-item">
+        <div class="bg-white"><img src="../public/assets/simplite-logo.svg" width="800" height="400" alt="Simplite 5x"></div>
+        <div class="label">5x (800 × 400) · 고해상도</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 한글 포함 -->
+  <div class="section">
+    <div class="section-title">한글 서브카피 버전 (160 × 90)</div>
+    <div class="logo-row">
+      <div class="logo-item">
+        <div class="bg-white"><img src="../public/assets/simplite-logo-kr.svg" width="160" height="90" alt="Simplite KR"></div>
+        <div class="label">웹 브라우저 표시용</div>
+      </div>
+      <div class="logo-item">
+        <div class="bg-white"><img src="../public/assets/simplite-logo-kr.svg" width="320" height="180" alt="Simplite KR 2x"></div>
+        <div class="label">2x 확대</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 파비콘 -->
+  <div class="section">
+    <div class="section-title">파비콘</div>
+    <div class="favicon-demo">
+      <div class="fav-card">
+        <img src="../public/assets/simplite-favicon.svg" width="16" height="16" alt="16">
+        <div class="label">16 × 16</div>
+      </div>
+      <div class="fav-card">
+        <img src="../public/assets/simplite-favicon.svg" width="32" height="32" alt="32">
+        <div class="label">32 × 32</div>
+      </div>
+      <div class="fav-card">
+        <img src="../public/assets/simplite-favicon.svg" width="64" height="64" alt="64">
+        <div class="label">64 × 64</div>
+      </div>
+      <div class="fav-card">
+        <img src="../public/assets/simplite-favicon.svg" width="128" height="128" alt="128">
+        <div class="label">128 × 128</div>
+      </div>
+      <div class="fav-card">
+        <img src="../public/assets/simplite-favicon.svg" width="192" height="192" alt="192">
+        <div class="label">192 × 192 (Android)</div>
+      </div>
+    </div>
+    <div style="margin-top: 30px;">
+      <div class="browser-tab">
+        <img src="../public/assets/simplite-favicon.svg" alt="fav">
+        Simplite · Write Simple, Achieve More
+      </div>
+      <div style="background: white; border: 1px solid #D1DDD4; padding: 20px; border-radius: 0 8px 8px 8px; font-size: 13px; color: #6B8A7A;">
+        브라우저 탭 미리보기
+      </div>
+    </div>
+  </div>
+
+  <!-- 컬러 팔레트 -->
+  <div class="section">
+    <div class="section-title">컬러 팔레트</div>
+    <div class="color-palette">
+      <div class="swatch">
+        <div class="chip" style="background: #1B5E3F;"></div>
+        <div>#1B5E3F</div>
+        <div style="color:#1B5E3F;">Deep Green</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #2E8B57;"></div>
+        <div>#2E8B57</div>
+        <div>Sea Green</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #2A9D8F;"></div>
+        <div>#2A9D8F</div>
+        <div>Teal</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #52B788;"></div>
+        <div>#52B788</div>
+        <div>Mint</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #264653;"></div>
+        <div>#264653</div>
+        <div>Charcoal</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #F5B841;"></div>
+        <div>#F5B841</div>
+        <div>Pencil Gold</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #E76F51;"></div>
+        <div>#E76F51</div>
+        <div>Eraser Red</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 파일 스펙 -->
+  <div class="section">
+    <div class="section-title">파일 목록 & HTML 연결 예시</div>
+    <table class="spec-table">
+      <thead>
+        <tr><th>파일명</th><th>용도</th><th>크기</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>../public/assets/simplite-logo.svg</code></td><td>메인 로고 (영문)</td><td>160 × 80</td></tr>
+        <tr><td><code>../public/assets/simplite-logo-kr.svg</code></td><td>한글 서브카피 포함</td><td>160 × 90</td></tr>
+        <tr><td><code>simplite-logo.png</code></td><td>1x 래스터</td><td>160 × 80</td></tr>
+        <tr><td><code>simplite-logo@2x.png</code></td><td>레티나용</td><td>320 × 160</td></tr>
+        <tr><td><code>../public/assets/simplite-favicon.svg</code></td><td>파비콘 (벡터)</td><td>32 × 32</td></tr>
+        <tr><td><code>favicon-16.png</code></td><td>브라우저 탭</td><td>16 × 16</td></tr>
+        <tr><td><code>favicon-32.png</code></td><td>북마크</td><td>32 × 32</td></tr>
+        <tr><td><code>favicon-192.png</code></td><td>Android 홈스크린</td><td>192 × 192</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 24px; background: #0E3D28; color: #E8F0EA; padding: 20px; border-radius: 8px; font-family: 'SF Mono', Consolas, monospace; font-size: 12px; overflow-x: auto;">
+<pre style="margin:0; white-space:pre-wrap;">&lt;!-- HTML &lt;head&gt; 설정 예시 --&gt;
+&lt;link rel="icon" type="image/svg+xml" href="/../public/assets/simplite-favicon.svg"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"&gt;
+&lt;link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"&gt;
+
+&lt;!-- 헤더 로고 --&gt;
+&lt;img src="/../public/assets/simplite-logo.svg" alt="Simplite" width="160" height="80"&gt;</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
