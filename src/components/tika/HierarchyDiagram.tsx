@@ -3,14 +3,15 @@ import styles from './HierarchyDiagram.module.css';
 
 export default function HierarchyDiagram() {
   const t = useTranslations('tika');
+  const hierRows = t.raw('hier_rows') as string[];
   const rows = [
-    { cls: 'g', emoji: '🎯', label: 'Goal', desc: '· Q2 MVP 출시' },
-    { cls: 's', emoji: '📘', label: 'Story', desc: '· 사용자 인증' },
-    { cls: 'f', emoji: '⚙️', label: 'Feature', desc: '· OAuth 연동' },
-    { cls: 't', emoji: '✓', label: 'Task', desc: '· Google 로그인' },
-    { cls: 't', emoji: '✓', label: 'Task', desc: '· 세션 관리' },
-    { cls: 'f', emoji: '⚙️', label: 'Feature', desc: '· 워크스페이스 온보딩' },
-    { cls: 's', emoji: '📘', label: 'Story', desc: '· 팀 협업 흐름' },
+    { cls: 'g', emoji: '🎯', label: 'Goal', desc: hierRows[0] },
+    { cls: 's', emoji: '📘', label: 'Story', desc: hierRows[1] },
+    { cls: 'f', emoji: '⚙️', label: 'Feature', desc: hierRows[2] },
+    { cls: 't', emoji: '✓', label: 'Task', desc: hierRows[3] },
+    { cls: 't', emoji: '✓', label: 'Task', desc: hierRows[4] },
+    { cls: 'f', emoji: '⚙️', label: 'Feature', desc: hierRows[5] },
+    { cls: 's', emoji: '📘', label: 'Story', desc: hierRows[6] },
   ];
 
   return (
@@ -20,8 +21,7 @@ export default function HierarchyDiagram() {
           <div>
             <span className="eyebrow">{t('hier_eyebrow')}</span>
             <h3 style={{ marginTop: 12 }}>
-              Goal → Story → Feature → Task<br />
-              4단계 <span style={{ color: 'var(--green)' }}>계층형</span> 연결.
+              {t.rich('hier_title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
             </h3>
             <p>{t('hier_desc')}</p>
           </div>

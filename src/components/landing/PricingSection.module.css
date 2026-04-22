@@ -5,6 +5,7 @@
 .ptier { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
 .pprice { font-family: var(--font-serif); font-size: 48px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
 .pprice small { font-size: 14px; color: var(--ink-muted); font-family: var(--font-sans); }
+.strike { font-size: 28px; color: var(--ink-faint); text-decoration: line-through; margin-right: 8px; }
 .pnote { font-size: 13px; color: var(--ink-muted); margin-bottom: 28px; }
 .plan ul { list-style: none; margin-bottom: 28px; flex: 1; }
 .plan ul li { padding: 8px 0; font-size: 14px; color: var(--ink-soft); display: flex; gap: 10px; align-items: flex-start; }

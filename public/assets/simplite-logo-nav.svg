@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" width="360" height="100">
+  <!-- 노트 아이콘 (좌측) -->
+  <g transform="translate(4, 8)">
+    <!-- 노트 바디 -->
+    <rect x="6" y="4" width="28" height="36" fill="#fff" stroke="#1B5E3F" stroke-width="1.8" rx="3"/>
+    <!-- 나선 바인딩 -->
+    <circle cx="6" cy="12" r="2.5" fill="none" stroke="#1B5E3F" stroke-width="1.5"/>
+    <circle cx="6" cy="20" r="2.5" fill="none" stroke="#1B5E3F" stroke-width="1.5"/>
+    <circle cx="6" cy="28" r="2.5" fill="none" stroke="#1B5E3F" stroke-width="1.5"/>
+    <circle cx="6" cy="36" r="2.5" fill="none" stroke="#1B5E3F" stroke-width="1.5"/>
+    <!-- 줄 -->
+    <line x1="14" y1="14" x2="28" y2="14" stroke="#2A9D8F" stroke-width="1.2" opacity="0.5"/>
+    <line x1="14" y1="20" x2="28" y2="20" stroke="#2A9D8F" stroke-width="1.2" opacity="0.5"/>
+    <line x1="14" y1="26" x2="28" y2="26" stroke="#2A9D8F" stroke-width="1.2" opacity="0.5"/>
+    <line x1="14" y1="32" x2="22" y2="32" stroke="#2A9D8F" stroke-width="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- "Simplite" 텍스트 -->
+  <g transform="translate(44, 4)">
+    <!-- S - 딥그린 -->
+    <text x="0" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#1B5E3F" letter-spacing="-1">S</text>
+    <!-- i - 틸 바디 + 골드 닷 -->
+    <text x="32" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#2A9D8F" letter-spacing="-1">i</text>
+    <circle cx="39" cy="8" r="4.5" fill="#F5B841"/>
+    <!-- m - 그라데이션 틸→민트 -->
+    <text x="50" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#2A9D8F" letter-spacing="-1">m</text>
+    <!-- p - 민트 -->
+    <text x="96" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#52B788" letter-spacing="-1">p</text>
+    <!-- l - 딥그린 -->
+    <text x="126" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#1B5E3F" letter-spacing="-1">l</text>
+    <!-- i - 그린 바디 + 골드 닷 -->
+    <text x="140" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#2E8B57" letter-spacing="-1">i</text>
+    <circle cx="147" cy="8" r="4.5" fill="#F5B841"/>
+    <!-- t - 차콜 -->
+    <text x="155" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#264653" letter-spacing="-1">t</text>
+    <!-- e - 틸 -->
+    <text x="178" y="42" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="52" font-weight="800" fill="#2A9D8F" letter-spacing="-1">e</text>
+  </g>
+
+  <!-- 연필 아이콘 (우측) -->
+  <g transform="translate(262, 2) rotate(25, 10, 20)">
+    <!-- 지우개 -->
+    <rect x="5" y="0" width="10" height="7" fill="#E76F51" rx="1.5"/>
+    <!-- 금속 밴드 -->
+    <rect x="5" y="7" width="10" height="3" fill="#C9A961"/>
+    <!-- 몸체 -->
+    <rect x="5" y="10" width="10" height="30" fill="#F5B841"/>
+    <rect x="5.8" y="10" width="2" height="30" fill="#fff" opacity="0.3"/>
+    <!-- 깎은 부분 -->
+    <polygon points="5,40 15,40 13.5,46 6.5,46" fill="#D4A574"/>
+    <!-- 심 -->
+    <polygon points="6.5,46 13.5,46 10,52" fill="#2C1810"/>
+  </g>
+
+  <!-- WRITE SIMPLE -->
+  <text x="112" y="68"
+        text-anchor="middle"
+        font-family="'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif"
+        font-size="11"
+        font-weight="700"
+        fill="#1B5E3F"
+        letter-spacing="3">WRITE SIMPLE</text>
+
+  <!-- 구분선 + 골드 점 -->
+  <line x1="60" y1="78" x2="100" y2="78" stroke="#52B788" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="112" cy="78" r="2" fill="#F5B841"/>
+  <line x1="124" y1="78" x2="164" y2="78" stroke="#52B788" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ACHIEVE MORE -->
+  <text x="112" y="92"
+        text-anchor="middle"
+        font-family="'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif"
+        font-size="10"
+        font-weight="500"
+        fill="#2A9D8F"
+        letter-spacing="3.5">ACHIEVE MORE</text>
+</svg>

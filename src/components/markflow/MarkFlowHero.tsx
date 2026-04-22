@@ -27,8 +27,8 @@ export default function MarkFlowHero() {
               <span className="badge">Cloudflare Workers</span>
             </div>
             <div className={styles.ctas}>
-              <a href="https://github.com/claude-code-expert/markflow" target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub에서 보기 →</a>
-              <a href="#dual" className="btn btn-ghost">에디터 미리보기</a>
+              <a href="https://github.com/claude-code-expert/markflow" target="_blank" rel="noopener noreferrer" className="btn btn-primary">{t('hero_cta_github')}</a>
+              <a href="#dual" className="btn btn-ghost">{t('hero_cta_preview')}</a>
             </div>
           </div>
           <div className="win">

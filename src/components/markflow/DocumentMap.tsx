@@ -10,7 +10,7 @@ export default function DocumentMap() {
       <div className="container">
         <SectionHead
           eyebrow={t('map_eyebrow')}
-          title={<>문서를 <span style={{ color: 'var(--green)' }}>그래프</span>로 본다는 것.</>}
+          title={t.rich('map_title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
           aside={t('map_aside')}
         />
         <div className={styles.mapWrap}>
@@ -37,8 +37,8 @@ export default function DocumentMap() {
             </g>
             <g className={`${styles.node} ${styles.current}`}>
               <rect x="330" y="160" width="170" height="60" rx="10" fill="#1a3a2e" stroke="#0f2a20" />
-              <text x="415" y="185" textAnchor="middle" fill="#fff" fontWeight="600" style={{ fontSize: 13, fontFamily: 'var(--font-sans)' }}>현재 문서</text>
-              <text x="415" y="205" textAnchor="middle" fill="#a8c4b4" style={{ fontSize: 11, fontFamily: 'var(--font-sans)' }}>MarkFlow 에디터 기능</text>
+              <text x="415" y="185" textAnchor="middle" fill="#fff" fontWeight="600" style={{ fontSize: 13, fontFamily: 'var(--font-sans)' }}>{t('map_current')}</text>
+              <text x="415" y="205" textAnchor="middle" fill="#a8c4b4" style={{ fontSize: 11, fontFamily: 'var(--font-sans)' }}>{t('map_current_desc')}</text>
             </g>
             <g className={styles.node}>
               <rect x="590" y="75" width="260" height="50" rx="8" fill="#fff" stroke="#4a8a6e" />
@@ -48,7 +48,7 @@ export default function DocumentMap() {
             <g className={styles.node}>
               <rect x="590" y="255" width="260" height="50" rx="8" fill="#fff" stroke="#4a8a6e" />
               <text x="610" y="285" fill="#b85c3a" style={{ fontSize: 11, fontFamily: 'var(--font-mono)' }}>next →</text>
-              <text x="680" y="285" fill="#1a3a2e" style={{ fontSize: 13, fontFamily: 'var(--font-sans)' }}>MarkFlow 프로젝트</text>
+              <text x="680" y="285" fill="#1a3a2e" style={{ fontSize: 13, fontFamily: 'var(--font-sans)' }}>{t('map_next_label')}</text>
             </g>
           </svg>
         </div>

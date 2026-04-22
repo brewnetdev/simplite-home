@@ -17,7 +17,7 @@ export default function WhySection() {
       <div className="container">
         <SectionHead
           eyebrow={t('eyebrow')}
-          title={<>우리가 <span style={{ color: 'var(--rust)' }}>해결한</span> 불편들.</>}
+          title={t.rich('title', { accent: (chunks) => <span style={{ color: 'var(--rust)' }}>{chunks}</span> })}
           aside={t('aside')}
         />
         <div className={styles.whyGrid}>

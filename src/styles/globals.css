@@ -138,8 +138,8 @@ img { max-width: 100%; display: block; }
   width: 18px; height: 1px; background: var(--moss);
 }
 h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; color: var(--ink); letter-spacing: -0.015em; line-height: 1.08; }
-h1 { font-size: clamp(48px, 6.4vw, 92px); }
-h2 { font-size: clamp(36px, 4.2vw, 58px); }
+h1 { font-size: clamp(32px, 4.6vw, 68px); }
+h2 { font-size: clamp(32px, 4.2vw, 54px); }
 h3 { font-size: clamp(22px, 2vw, 28px); line-height: 1.2; }
 
 .kr-h1, .kr-h2 {
@@ -148,8 +148,8 @@ h3 { font-size: clamp(22px, 2vw, 28px); line-height: 1.2; }
   letter-spacing: -0.025em;
   line-height: 1.18;
 }
-.kr-h1 { font-size: clamp(38px, 4.8vw, 64px); }
-.kr-h2 { font-size: clamp(28px, 3.2vw, 44px); }
+.kr-h1 { font-size: clamp(34px, 4.8vw, 60px); }
+.kr-h2 { font-size: clamp(24px, 3.2vw, 40px); }
 
 .lead { font-size: 18px; color: var(--ink-soft); line-height: 1.6; max-width: 640px; }
 

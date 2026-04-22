@@ -12,7 +12,7 @@ export default function ProductShowcase() {
       <div className="container">
         <SectionHead
           eyebrow={t('eyebrow')}
-          title={<>Simplite가 만든 <span style={{ color: 'var(--green)' }}>두 가지 도구</span>.<br />{t('titleSuffix')}</>}
+          title={<>{t.rich('title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}<br />{t('titleSuffix')}</>}
           aside={t('aside')}
         />
 
@@ -22,12 +22,12 @@ export default function ProductShowcase() {
             <div className={styles.productMark}>
               <div className={`${styles.glyph} ${styles.glyphTika}`}>T</div>
               <div>
-                <div className={styles.name}>Tika<span style={{ color: 'var(--rust)' }}>.</span></div>
+                <div className={styles.name}>Tika<span style={{ color: 'var(--rust)' }}>.</span> <span className={styles.nameSub}>Ticket Based Kanbanboard</span></div>
                 <div className={styles.tag}>{t('tika.tag')}</div>
               </div>
             </div>
             <div className={styles.ptitle}>
-              흩어진 할 일을 <em>목표 단위로</em> 묶어 일하세요.
+              {t.rich('tika.title', { em: (chunks) => <em>{chunks}</em> })}
             </div>
             <p className={styles.pdesc}>{t('tika.desc')}</p>
             <ul className={styles.plist}>
@@ -61,12 +61,12 @@ export default function ProductShowcase() {
             <div className={styles.productMark}>
               <div className={`${styles.glyph} ${styles.glyphMark}`}>M</div>
               <div>
-                <div className={styles.name}>MarkFlow<span style={{ color: 'var(--rust)' }}>.</span></div>
+                <div className={styles.name}>MarkFlow<span style={{ color: 'var(--rust)' }}>.</span> <span className={styles.nameSub}>Markdown Knowledge System</span></div>
                 <div className={styles.tag}>{t('markflow.tag')}</div>
               </div>
             </div>
             <div className={styles.ptitle}>
-              팀의 지식을 <em>구조로</em> 쌓으세요.
+              {t.rich('markflow.title', { em: (chunks) => <em>{chunks}</em> })}
             </div>
             <p className={styles.pdesc}>{t('markflow.desc')}</p>
             <ul className={styles.plist}>

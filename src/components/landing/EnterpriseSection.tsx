@@ -23,8 +23,8 @@ export default function EnterpriseSection() {
           <div className={styles.entHead}>
             <div>
               <span className={`eyebrow ${styles.eyebrow}`}>{t('eyebrow')}</span>
-              <h2 style={{ marginTop: 16, color: '#fff' }}>
-                설치형으로, <em style={{ color: 'var(--sand)', fontStyle: 'italic' }}>당신의 환경</em>에.
+              <h2 className={styles.h2} style={{ marginTop: 16, color: '#fff' }}>
+                {t.rich('title', { em: (chunks) => <em style={{ color: 'var(--sand)', fontStyle: 'italic' }}>{chunks}</em> })}
               </h2>
             </div>
             <p className={styles.desc}>{t('desc')}</p>

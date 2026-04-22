@@ -34,18 +34,27 @@
     "pillar2_no": "02 / OPENNESS",
     "pillar2_title": "Open by default",
     "pillar2_desc": "Core features are Apache 2.0 — modify, self-host, and use commercially. We start with trust, not lock-in.",
-    "pillar3_no": "03 / AI-NATIVE",
-    "pillar3_title": "Built on MCP & Agents",
-    "pillar3_desc": "All data and work units are MCP-native, connecting naturally with your agents and workflows."
+    "pillar3_no": "03 / OWNERSHIP",
+    "pillar3_title": "Keep it in your hands",
+    "pillar3_desc": "Cloud is great, but so is your own server. We support both on-premise and SaaS — data sovereignty always stays with you.",
+    "pillar4_no": "04 / SIMPLICITY",
+    "pillar4_title": "No learning required",
+    "pillar4_desc": "Anyone opening it for the first time should find their flow within 5 minutes. Every Simplite product is designed on the one-page manual principle.",
+    "pillar5_no": "05 / OPENNESS",
+    "pillar5_title": "Open by default",
+    "pillar5_desc": "Core features are Apache 2.0 — modify, self-host, and use commercially. We start with trust, not lock-in.",
+    "pillar6_no": "06 / AI-NATIVE",
+    "pillar6_title": "Built on MCP & Agents",
+    "pillar6_desc": "All data and work units are MCP-native, connecting naturally with your agents and workflows."
   },
   "products": {
     "eyebrow": "Products · 2 of N",
-    "title": "Two tools by Simplite. More coming soon.",
+    "title": "Two tools by Simplite. <accent>More coming soon</accent>.",
     "titleSuffix": "",
     "aside": "Knowledge and tasks are connected. We built Tika and MarkFlow as two axes, designed to work together.",
     "tika": {
       "tag": "TICKET · BASED · KANBAN",
-      "title": "Bundle scattered tasks into goal-driven workflows.",
+      "title": "Bundle scattered tasks into <em>goal-driven</em> workflows.",
       "desc": "Hierarchical tickets from Goal → Story → Feature → Task with drag-and-drop kanban. Burndown, workload, WBS/Gantt. One board from small teams to enterprise.",
       "board": "3-column drag kanban",
       "boardDesc": "Backlog sidebar, real-time filters & search",
@@ -61,7 +70,7 @@
     },
     "markflow": {
       "tag": "MARKDOWN · KNOWLEDGE · SYSTEM",
-      "title": "Build your team's knowledge structurally.",
+      "title": "Build your team's knowledge <em>structurally</em>.",
       "desc": "Markdown-based dual editor with document relation maps. Convert docx, ppt, html, pdf to markdown. Presentation mode and Workers/Pages publishing.",
       "editor": "Dual Editor",
       "editorDesc": "Left markdown, right preview. LaTeX & code formatter",
@@ -78,7 +87,7 @@
   },
   "why": {
     "eyebrow": "Why Simplite",
-    "title": "Problems we solved.",
+    "title": "Problems we <accent>solved</accent>.",
     "aside": "There are many work tools. But most become 'tools for managing tools'.",
     "p1_no": "PROBLEM 01",
     "p1_bad": "\"What did I do yesterday?\" The question repeated every morning",
@@ -92,7 +101,7 @@
   },
   "enterprise": {
     "eyebrow": "Enterprise · Coming Soon",
-    "title": "On-premise, in your environment.",
+    "title": "On-premise, in <em>your environment</em>.",
     "desc": "Install the open-source version on your internal infrastructure and extend with enterprise features via commercial license. From fully air-gapped deployment to in-house LLM and SSO integration.",
     "items": [
       { "title": "On-Premise Installation", "desc": "Full air-gapped deployment. Docker / Kubernetes / Helm Chart support." },
@@ -105,7 +114,7 @@
   },
   "pricing": {
     "eyebrow": "License & Pricing",
-    "title": "Start free, scale when you need.",
+    "title": "Start free, scale <accent>when you need</accent>.",
     "aside": "All core features are permanently free open-source. Team & Enterprise licenses add AI automation and enterprise features.",
     "free": {
       "name": "Free",
@@ -119,7 +128,7 @@
     "team": {
       "name": "Team",
       "tier": "CLOUD SAAS · PER SEAT",
-      "price": "₩9,900",
+      "price": "$3",
       "priceUnit": "/ user · mo",
       "note": "In development · Join beta waitlist",
       "badge": "RECOMMENDED",
@@ -145,6 +154,17 @@
       { "q": "Which on-premise LLM models are supported?", "a": "Ollama and vLLM-based open models (Llama 3, Qwen, DeepSeek, etc.) are supported by default. Any OpenAI-compatible API endpoint can be connected." },
       { "q": "Can I migrate from existing tools (Jira, Notion, etc.)?", "a": "Tika supports Jira CSV Import, and MarkFlow supports bulk MD conversion from Notion, Confluence, docx, and pdf. Enterprise plan includes custom migration support." },
       { "q": "What exactly does MCP native mean?", "a": "All tickets, documents, and workspace objects are exposed via Model Context Protocol spec. Claude Desktop, Cursor, and your own AI agents can directly access and modify Simplite data." }
+    ]
+  },
+  "roadmap": {
+    "eyebrow": "Roadmap",
+    "title": "Where we are and where we're going",
+    "description": "We transparently share our current development stages.",
+    "items": [
+      { "status": "done", "tag": "● Shipped · 2025", "title": "tika · markflow open-source release", "desc": "Core features released under Apache 2.0 license. Self-hosting guide and Docker Compose templates included." },
+      { "status": "progress", "tag": "◐ In Progress · 2026 Q2", "title": "Team Plan · AI automation enhancement", "desc": "AI auto ticket classification, knowledge graph generation, backlink automation in development. SSO and managed SaaS preparation." },
+      { "status": "planned", "tag": "○ Planned · 2026 Q3", "title": "Enterprise Plan · SAML & advanced audit log", "desc": "Enterprise features for large organizations. SAML, LDAP, SCIM provisioning and detailed audit logs." },
+      { "status": "planned", "tag": "○ Planned · 2026 Q4+", "title": "tika ↔ markflow full bidirectional integration", "desc": "Handle tickets and notes seamlessly in a single workspace. Expand AI agents to leverage full context." }
     ]
   },
   "finalCta": {
@@ -212,11 +232,13 @@
     "title": "Plan Simply. Ship Boldly.",
     "sub": "Hierarchical kanban for goal-driven work. Connect scattered tasks from Goal→Story→Feature→Task, and move the entire team on the same structure.",
     "demo_eyebrow": "Try it · Drag the cards",
-    "demo_title": "Move them with real drag and drop.",
+    "demo_title": "Move them with real <accent>drag and drop</accent>.",
+    "demo_workspace": "Tika · MVP Launch Workspace",
     "demo_aside": "The cards below are actually draggable. All Tika kanban interactions respond instantly like this.",
     "demo_note": "↑ Grab a card and drag it to another column",
     "hier_eyebrow": "Hierarchy",
-    "hier_title": "Goal → Story → Feature → Task 4-level hierarchical linking.",
+    "hier_title": "Goal → Story → Feature → Task 4-level <accent>hierarchical</accent> linking.",
+    "hier_rows": ["· Q2 MVP Launch", "· User Auth", "· OAuth Integration", "· Google Login", "· Session Mgmt", "· Workspace Onboarding", "· Team Collaboration"],
     "hier_desc": "From quarterly goals (Goal) to today's tasks (Task), everything lives in the same structure. See the parent goal from any ticket, and progress from any goal.",
     "feat_eyebrow": "Feature Set",
     "feat_title": "Enough for small teams, powerful enough for enterprise.",
@@ -235,7 +257,10 @@
     "shots_title": "Actual screens.",
     "cta_eyebrow": "Get Tika",
     "cta_title": "Plan simply. Ship boldly.",
-    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment."
+    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment.",
+    "hero_cta_github": "View on GitHub →",
+    "hero_cta_demo": "Live Demo",
+    "kanban_tickets": ["MVP Launch Plan", "Auth System Design", "2 Overdue Items", "Drag & Drop Impl", "API Endpoint Draft", "Kanban Board UI", "Google OAuth Integration", "DB Schema Design ✓", "ERD Finalized ✓"]
   },
   "markflow": {
     "crumb": "SIMPLITE / PRODUCTS / MARKFLOW",
@@ -243,13 +268,16 @@
     "title": "Write in Markdown. Think in Context.",
     "sub": "Build team knowledge in markdown, connect with relations, publish anywhere. A knowledge management system with document relation maps and dual editor.",
     "dual_eyebrow": "Dual Editor",
-    "dual_title": "Markdown that renders as you write.",
+    "dual_title": "Markdown that <accent>renders</accent> as you write.",
     "dual_aside": "Left side writes, right side renders. LaTeX formulas, code highlights, internal document links ([[]]) — all in real-time.",
     "map_eyebrow": "Document Map",
-    "map_title": "What it means to see documents as a graph.",
+    "map_title": "What it means to see documents as a <accent>graph</accent>.",
+    "map_current": "Current Doc",
+    "map_current_desc": "MarkFlow Editor Features",
+    "map_next_label": "MarkFlow Project",
     "map_aside": "Search already exists everywhere. MarkFlow visualizes prev/next/parent/related relations, letting you navigate on context.",
     "convert_eyebrow": "Universal Convert",
-    "convert_title": "Every format to Markdown.",
+    "convert_title": "Every format to <accent>Markdown</accent>.",
     "convert_aside": "No need to abandon existing documents. docx, ppt, html, pdf convert to markdown while preserving structure.",
     "feat_eyebrow": "Feature Set",
     "feat_title": "Everything you need for knowledge management.",
@@ -268,6 +296,22 @@
     "shots_title": "Actual screens.",
     "cta_eyebrow": "Get MarkFlow",
     "cta_title": "Write in Markdown. Think in Context.",
-    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment."
+    "cta_desc": "Start with open source now, or contact us for team & enterprise deployment.",
+    "hero_cta_github": "View on GitHub →",
+    "hero_cta_preview": "Preview Editor",
+    "demo_h1": "Simplite Onboarding Guide",
+    "demo_h2_overview": "Overview",
+    "demo_body": "MarkFlow is a **markdown-based** knowledge management system. Connect all your team's documents in one structure.",
+    "demo_h2_features": "Key Features",
+    "demo_feat1": "Dual Editor",
+    "demo_feat1_suffix": "· Real-time preview",
+    "demo_feat2": "Document relation map visualization",
+    "demo_feat3_code": "inline code",
+    "demo_feat3_suffix": "highlight",
+    "demo_h2_linked": "Linked Documents",
+    "demo_prev": "Installation Guide",
+    "demo_next": "Workspace Setup",
+    "demo_prev_label": "Previous",
+    "demo_next_label": "Next"
   }
 }

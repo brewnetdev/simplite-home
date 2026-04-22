@@ -39,18 +39,20 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
         <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon-192.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#1a3a2e" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Nav />
-          {children}
+          <main>{children}</main>
           <Footer />
         </NextIntlClientProvider>
         {process.env.NODE_ENV === 'development' && (
           <Script
             src="//unpkg.com/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
           />
         )}
       </body>

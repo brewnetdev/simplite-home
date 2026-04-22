@@ -10,7 +10,7 @@ export default function DualEditorDemo() {
       <div className="container">
         <SectionHead
           eyebrow={t('dual_eyebrow')}
-          title={<>쓰는 대로 <span style={{ color: 'var(--green)' }}>보이는</span> 마크다운.</>}
+          title={t.rich('dual_title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
           aside={t('dual_aside')}
         />
         <div className={styles.dual}>
@@ -25,34 +25,32 @@ export default function DualEditorDemo() {
           <div className={styles.dualGrid}>
             <div className={`${styles.dualCol} ${styles.editor}`}>
               <pre style={{ margin: 0, fontFamily: 'inherit', whiteSpace: 'pre-wrap' }}>
-                <span className={styles.mdH}># Simplite 온보딩 가이드</span>{'\n\n'}
-                <span className={styles.mdComment}>## 개요</span>{'\n\n'}
-                MarkFlow는 <span className={styles.mdB}>**마크다운 기반**</span> 지식 관리{'\n'}
-                시스템입니다. 팀의 모든 문서를 하나의{'\n'}
-                구조로 연결하세요.{'\n\n'}
-                <span className={styles.mdComment}>## 핵심 기능</span>{'\n\n'}
-                - <span className={styles.mdLink}>[[듀얼 에디터]]</span> · 실시간 프리뷰{'\n'}
-                - 문서 관계 맵 시각화{'\n'}
-                - LaTeX 수식: $E = mc^2${'\n'}
-                - <span className={styles.mdCode}>`인라인 코드`</span> 하이라이트{'\n\n'}
-                <span className={styles.mdComment}>## 연결된 문서</span>{'\n\n'}
-                이전 문서 ← <span className={styles.mdLink}>[[설치 가이드]]</span>{'\n'}
-                다음 문서 → <span className={styles.mdLink}>[[워크스페이스 설정]]</span>
+                <span className={styles.mdH}># {t('demo_h1')}</span>{'\n\n'}
+                <span className={styles.mdComment}>## {t('demo_h2_overview')}</span>{'\n\n'}
+                {t('demo_body')}{'\n\n'}
+                <span className={styles.mdComment}>## {t('demo_h2_features')}</span>{'\n\n'}
+                - <span className={styles.mdLink}>[[{t('demo_feat1')}]]</span> {t('demo_feat1_suffix')}{'\n'}
+                - {t('demo_feat2')}{'\n'}
+                - LaTeX: $E = mc^2${'\n'}
+                - <span className={styles.mdCode}>`{t('demo_feat3_code')}`</span> {t('demo_feat3_suffix')}{'\n\n'}
+                <span className={styles.mdComment}>## {t('demo_h2_linked')}</span>{'\n\n'}
+                {t('demo_prev_label')} ← <span className={styles.mdLink}>[[{t('demo_prev')}]]</span>{'\n'}
+                {t('demo_next_label')} → <span className={styles.mdLink}>[[{t('demo_next')}]]</span>
               </pre>
             </div>
             <div className={`${styles.dualCol} ${styles.preview}`}>
-              <h2>Simplite 온보딩 가이드</h2>
-              <h3>개요</h3>
-              <p>MarkFlow는 <strong>마크다운 기반</strong> 지식 관리 시스템입니다. 팀의 모든 문서를 하나의 구조로 연결하세요.</p>
-              <h3>핵심 기능</h3>
+              <h2>{t('demo_h1')}</h2>
+              <h3>{t('demo_h2_overview')}</h3>
+              <p>{t('demo_body')}</p>
+              <h3>{t('demo_h2_features')}</h3>
               <ul>
-                <li><a href="#">듀얼 에디터</a> · 실시간 프리뷰</li>
-                <li>문서 관계 맵 시각화</li>
-                <li>LaTeX 수식: <span className={styles.math}>E = mc²</span></li>
-                <li><code>인라인 코드</code> 하이라이트</li>
+                <li><a href="#">{t('demo_feat1')}</a> {t('demo_feat1_suffix')}</li>
+                <li>{t('demo_feat2')}</li>
+                <li>LaTeX: <span className={styles.math}>E = mc²</span></li>
+                <li><code>{t('demo_feat3_code')}</code> {t('demo_feat3_suffix')}</li>
               </ul>
-              <h3>연결된 문서</h3>
-              <p>이전 문서 ← <a href="#">설치 가이드</a><br />다음 문서 → <a href="#">워크스페이스 설정</a></p>
+              <h3>{t('demo_h2_linked')}</h3>
+              <p>{t('demo_prev_label')} ← <a href="#">{t('demo_prev')}</a><br />{t('demo_next_label')} → <a href="#">{t('demo_next')}</a></p>
             </div>
           </div>
         </div>

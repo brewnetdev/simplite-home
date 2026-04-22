@@ -7,6 +7,7 @@
 .glyphTika { background: var(--green); color: #fff; }
 .glyphMark { background: #fff; color: var(--green); border: 1px solid var(--green); }
 .name { font-family: var(--font-serif); font-size: 32px; color: var(--green); }
+.nameSub { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ink-muted); letter-spacing: -0.01em; }
 .tag { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .ptitle { font-family: var(--font-sans); font-size: 36px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 20px; }
 .ptitle em { color: var(--green); font-style: normal; background: linear-gradient(transparent 65%, var(--green-soft) 65%); padding: 0 2px; }

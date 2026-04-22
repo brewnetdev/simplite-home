@@ -8,28 +8,28 @@ import styles from './KanbanDemo.module.css';
 interface Ticket {
   id: string;
   type: 'goal' | 'story' | 'feat' | 'task';
-  title: string;
+  titleKey: number;
   priority: 'High' | 'Medium' | 'Low';
   assignee: string;
 }
 
 const INITIAL_COLUMNS: Record<string, Ticket[]> = {
   backlog: [
-    { id: '1', type: 'goal', title: 'MVP 출시 계획', priority: 'High', assignee: 'E' },
-    { id: '2', type: 'story', title: '인증 시스템 설계', priority: 'Medium', assignee: 'D' },
-    { id: '3', type: 'task', title: '오버듀 2건 확인 필요', priority: 'High', assignee: 'E' },
+    { id: '1', type: 'goal', titleKey: 0, priority: 'High', assignee: 'E' },
+    { id: '2', type: 'story', titleKey: 1, priority: 'Medium', assignee: 'D' },
+    { id: '3', type: 'task', titleKey: 2, priority: 'High', assignee: 'E' },
   ],
   todo: [
-    { id: '4', type: 'feat', title: '드래그앤드롭 구현', priority: 'High', assignee: 'E' },
-    { id: '5', type: 'task', title: 'API 엔드포인트 초안', priority: 'Medium', assignee: 'D' },
+    { id: '4', type: 'feat', titleKey: 3, priority: 'High', assignee: 'E' },
+    { id: '5', type: 'task', titleKey: 4, priority: 'Medium', assignee: 'D' },
   ],
   progress: [
-    { id: '6', type: 'feat', title: '칸반 보드 UI 작업', priority: 'High', assignee: 'E' },
-    { id: '7', type: 'task', title: 'Google OAuth 연동', priority: 'Medium', assignee: 'D' },
+    { id: '6', type: 'feat', titleKey: 5, priority: 'High', assignee: 'E' },
+    { id: '7', type: 'task', titleKey: 6, priority: 'Medium', assignee: 'D' },
   ],
   done: [
-    { id: '8', type: 'task', title: 'DB 스키마 설계 ✓', priority: 'Low', assignee: 'E' },
-    { id: '9', type: 'task', title: 'ERD 확정 ✓', priority: 'Low', assignee: 'D' },
+    { id: '8', type: 'task', titleKey: 7, priority: 'Low', assignee: 'E' },
+    { id: '9', type: 'task', titleKey: 8, priority: 'Low', assignee: 'D' },
   ],
 };
 
@@ -42,6 +42,7 @@ const COL_NAMES: Record<string, string> = {
 
 export default function KanbanDemo() {
   const t = useTranslations('tika');
+  const ticketTitles = t.raw('kanban_tickets') as string[];
   const [columns, setColumns] = useState(INITIAL_COLUMNS);
   const dragItem = useRef<{ id: string; from: string } | null>(null);
 
@@ -72,13 +73,13 @@ export default function KanbanDemo() {
       <div className="container">
         <SectionHead
           eyebrow={t('demo_eyebrow')}
-          title={<>실제 <span style={{ color: 'var(--green)' }}>드래그 앤 드롭</span>으로 움직여보세요.</>}
+          title={t.rich('demo_title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
           aside={t('demo_aside')}
         />
         <div className={styles.demoBoard}>
           <div className={styles.demoInner}>
             <div className={styles.demoTop}>
-              <span className={styles.dtitle}>Tika · MVP 출시 워크스페이스</span>
+              <span className={styles.dtitle}>{t('demo_workspace')}</span>
               <span className={styles.dbadge}>DRAG TO REORDER · 4 COLUMNS</span>
             </div>
             <div className={styles.demoCols}>
@@ -103,7 +104,7 @@ export default function KanbanDemo() {
                       <span className={`${styles.ttype} ${styles[ticket.type]}`}>
                         {ticket.type.toUpperCase()}
                       </span>
-                      <div className={styles.ttitle}>{ticket.title}</div>
+                      <div className={styles.ttitle}>{ticketTitles[ticket.titleKey]}</div>
                       <div className={styles.tmeta}>
                         <span className={`${styles.pri} ${ticket.priority === 'Medium' ? styles.med : ''} ${ticket.priority === 'Low' ? styles.low : ''}`}>
                           {ticket.priority}

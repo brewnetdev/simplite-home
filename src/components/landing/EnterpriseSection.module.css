@@ -3,6 +3,7 @@
 .entHead { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 56px; position: relative; }
 .eyebrow { color: var(--green-accent); }
 .eyebrow::before { background: var(--green-accent); }
+.h2 { font-size: clamp(32px, 4.6vw, 68px); }
 .desc { color: #c9d0cc; font-size: 15px; line-height: 1.7; }
 .entGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative; }
 .entCell { background: var(--ink); padding: 28px; }

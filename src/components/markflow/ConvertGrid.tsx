@@ -12,7 +12,7 @@ export default function ConvertGrid() {
       <div className="container">
         <SectionHead
           eyebrow={t('convert_eyebrow')}
-          title={<>모든 포맷을 <span style={{ color: 'var(--green)' }}>Markdown</span>으로.</>}
+          title={t.rich('convert_title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
           aside={t('convert_aside')}
         />
         <div className={styles.convert}>

@@ -18,7 +18,7 @@ export default function PricingSection() {
       <div className="container">
         <SectionHead
           eyebrow={t('eyebrow')}
-          title={<>자유롭게 시작하고, <span style={{ color: 'var(--green)' }}>필요할 때</span> 확장하세요.</>}
+          title={t.rich('title', { accent: (chunks) => <span style={{ color: 'var(--green)' }}>{chunks}</span> })}
           aside={t('aside')}
         />
         <div className={styles.priceGrid}>
@@ -38,7 +38,7 @@ export default function PricingSection() {
             <div className={styles.pbadge}>{t('team.badge')}</div>
             <div className={styles.pname}>Team<span style={{ color: 'var(--rust)' }}>.</span></div>
             <div className={styles.ptier}>{t('team.tier')}</div>
-            <div className={styles.pprice}>{t('team.price')} <small>{t('team.priceUnit')}</small></div>
+            <div className={styles.pprice}><s className={styles.strike}>{t('team.price')}</s> <small>{t('team.priceUnit')}</small></div>
             <div className={styles.pnote}>{t('team.note')}</div>
             <ul>
               {team.features.map((f, i) => <li key={i}>{f}</li>)}

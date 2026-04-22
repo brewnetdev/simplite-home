@@ -49,12 +49,12 @@
   },
   "products": {
     "eyebrow": "Products · 2 of N",
-    "title": "Simplite가 만든 두 가지 도구.",
+    "title": "Simplite가 만든 <accent>두 가지 도구</accent>.",
     "titleSuffix": "더 많은 제품이 곧 합류합니다.",
     "aside": "지식과 업무는 연결되어 있습니다. 우리는 그 두 축을 각각 Tika와 MarkFlow로 분리해 구축하고, 함께 쓸 때 완성되도록 설계합니다.",
     "tika": {
       "tag": "TICKET · BASED · KANBAN",
-      "title": "흩어진 할 일을 목표 단위로 묶어 일하세요.",
+      "title": "흩어진 할 일을 <em>목표 단위로</em> 묶어 일하세요.",
       "desc": "Goal → Story → Feature → Task로 연결되는 계층형 티켓과 드래그 앤 드롭 칸반. 번다운, 워크로드, WBS/간트까지. 작은 팀부터 엔터프라이즈까지 하나의 보드로.",
       "board": "3칼럼 드래그 칸반",
       "boardDesc": "백로그 사이드바, 실시간 필터·검색",
@@ -70,7 +70,7 @@
     },
     "markflow": {
       "tag": "MARKDOWN · KNOWLEDGE · SYSTEM",
-      "title": "팀의 지식을 구조로 쌓으세요.",
+      "title": "팀의 지식을 <em>구조로</em> 쌓으세요.",
       "desc": "마크다운 기반 듀얼 에디터와 문서 관계 맵. docx·ppt·html·pdf를 모두 마크다운으로 변환하고, 문서 간 연결을 한눈에. 프리젠테이션 모드와 Workers/Pages 퍼블리시까지.",
       "editor": "듀얼 에디터",
       "editorDesc": "좌측 마크다운, 우측 프리뷰. LaTeX·코드 포매터",
@@ -87,7 +87,7 @@
   },
   "why": {
     "eyebrow": "Why Simplite",
-    "title": "우리가 해결한 불편들.",
+    "title": "우리가 <accent>해결한</accent> 불편들.",
     "aside": "업무 도구는 많습니다. 그러나 대부분 '도구를 관리하기 위한 도구'로 변해버립니다.",
     "p1_no": "PROBLEM 01",
     "p1_bad": "\"어제 뭐 했지?\" 매일 아침 반복되는 질문",
@@ -101,7 +101,7 @@
   },
   "enterprise": {
     "eyebrow": "Enterprise · Coming Soon",
-    "title": "설치형으로, 당신의 환경에.",
+    "title": "설치형으로, <em>당신의 환경</em>에.",
     "desc": "오픈소스 버전을 그대로 내부 인프라에 설치하고, 상용 라이선스로 엔터프라이즈 기능을 확장하세요. 망분리·금융·공공 환경을 위한 완전 내부망 배포부터, 사내 LLM과 SSO 연동까지 한 번에.",
     "items": [
       { "title": "On-Premise 설치형", "desc": "완전한 내부망 배포. Docker / Kubernetes / Helm Chart 전 환경 지원." },
@@ -114,7 +114,7 @@
   },
   "pricing": {
     "eyebrow": "License & Pricing",
-    "title": "자유롭게 시작하고, 필요할 때 확장하세요.",
+    "title": "자유롭게 시작하고, <accent>필요할 때</accent> 확장하세요.",
     "aside": "모든 코어 기능은 오픈소스로 영구 무료. 팀·엔터프라이즈 라이선스는 AI 자동화와 엔터프라이즈 기능을 추가합니다.",
     "free": {
       "name": "Free",
@@ -128,7 +128,7 @@
     "team": {
       "name": "Team",
       "tier": "CLOUD SAAS · PER SEAT",
-      "price": "₩9,900",
+      "price": "₩4,400",
       "priceUnit": "/ user · mo",
       "note": "개발 중 · 베타 대기 신청",
       "badge": "RECOMMENDED",
@@ -232,11 +232,13 @@
     "title": "Plan Simply. Ship Boldly.",
     "sub": "목표 중심의 업무를 위한 계층형 칸반. 흩어진 할 일을 Goal→Story→Feature→Task로 연결하고, 팀 전체가 같은 구조 위에서 움직입니다.",
     "demo_eyebrow": "Try it · 드래그 해보세요",
-    "demo_title": "실제 드래그 앤 드롭으로 움직여보세요.",
+    "demo_title": "실제 <accent>드래그 앤 드롭</accent>으로 움직여보세요.",
+    "demo_workspace": "Tika · MVP 출시 워크스페이스",
     "demo_aside": "아래 카드는 실제로 드래그 가능한 데모입니다. Tika의 모든 칸반 인터랙션은 이처럼 즉각적으로 반응합니다.",
     "demo_note": "↑ 카드를 잡고 다른 칸으로 드래그 하세요",
     "hier_eyebrow": "Hierarchy",
-    "hier_title": "Goal → Story → Feature → Task 4단계 계층형 연결.",
+    "hier_title": "Goal → Story → Feature → Task 4단계 <accent>계층형</accent> 연결.",
+    "hier_rows": ["· Q2 MVP 출시", "· 사용자 인증", "· OAuth 연동", "· Google 로그인", "· 세션 관리", "· 워크스페이스 온보딩", "· 팀 협업 흐름"],
     "hier_desc": "분기 목표(Goal)부터 오늘의 할 일(Task)까지 같은 구조 안에 놓입니다. 티켓 하나를 보면 상위 목표가, 목표를 보면 하위 진행 상황이 한눈에 들어옵니다.",
     "feat_eyebrow": "Feature Set",
     "feat_title": "작은 팀에게도 충분하고, 큰 팀에게도 부족하지 않은.",
@@ -255,7 +257,10 @@
     "shots_title": "실제 화면.",
     "cta_eyebrow": "Get Tika",
     "cta_title": "Plan simply. Ship boldly.",
-    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요."
+    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요.",
+    "hero_cta_github": "GitHub에서 보기 →",
+    "hero_cta_demo": "라이브 데모",
+    "kanban_tickets": ["MVP 출시 계획", "인증 시스템 설계", "오버듀 2건 확인 필요", "드래그앤드롭 구현", "API 엔드포인트 초안", "칸반 보드 UI 작업", "Google OAuth 연동", "DB 스키마 설계 ✓", "ERD 확정 ✓"]
   },
   "markflow": {
     "crumb": "SIMPLITE / PRODUCTS / MARKFLOW",
@@ -263,13 +268,16 @@
     "title": "Write in Markdown. Think in Context.",
     "sub": "팀의 지식을 마크다운으로 쌓고, 관계로 연결하고, 어디로든 퍼블리시하세요. 문서 간 구조를 시각화하는 관계 맵과 듀얼 에디터로 설계된 지식 관리 시스템.",
     "dual_eyebrow": "Dual Editor",
-    "dual_title": "쓰는 대로 보이는 마크다운.",
+    "dual_title": "쓰는 대로 <accent>보이는</accent> 마크다운.",
     "dual_aside": "왼쪽은 쓰기, 오른쪽은 결과. LaTeX 수식, 코드 하이라이트, 내부 문서 링크([[]])까지 실시간으로 렌더링됩니다.",
     "map_eyebrow": "Document Map",
-    "map_title": "문서를 그래프로 본다는 것.",
+    "map_title": "문서를 <accent>그래프</accent>로 본다는 것.",
+    "map_current": "현재 문서",
+    "map_current_desc": "MarkFlow 에디터 기능",
+    "map_next_label": "MarkFlow 프로젝트",
     "map_aside": "검색은 이미 많습니다. MarkFlow는 이전/다음/상위/연관 관계를 시각화해, 지식의 맥락 위에서 이동할 수 있게 합니다.",
     "convert_eyebrow": "Universal Convert",
-    "convert_title": "모든 포맷을 Markdown으로.",
+    "convert_title": "모든 포맷을 <accent>Markdown</accent>으로.",
     "convert_aside": "기존 문서 자산을 버릴 필요가 없습니다. docx·ppt·html·pdf가 마크다운으로 구조를 유지한 채 변환됩니다.",
     "feat_eyebrow": "Feature Set",
     "feat_title": "지식 관리에 필요한 모든 것.",
@@ -288,6 +296,22 @@
     "shots_title": "실제 화면.",
     "cta_eyebrow": "Get MarkFlow",
     "cta_title": "Write in Markdown. Think in Context.",
-    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요."
+    "cta_desc": "오픈소스로 지금 시작하거나, 팀·엔터프라이즈 도입을 문의하세요.",
+    "hero_cta_github": "GitHub에서 보기 →",
+    "hero_cta_preview": "에디터 미리보기",
+    "demo_h1": "Simplite 온보딩 가이드",
+    "demo_h2_overview": "개요",
+    "demo_body": "MarkFlow는 **마크다운 기반** 지식 관리 시스템입니다. 팀의 모든 문서를 하나의 구조로 연결하세요.",
+    "demo_h2_features": "핵심 기능",
+    "demo_feat1": "듀얼 에디터",
+    "demo_feat1_suffix": "· 실시간 프리뷰",
+    "demo_feat2": "문서 관계 맵 시각화",
+    "demo_feat3_code": "인라인 코드",
+    "demo_feat3_suffix": "하이라이트",
+    "demo_h2_linked": "연결된 문서",
+    "demo_prev": "설치 가이드",
+    "demo_next": "워크스페이스 설정",
+    "demo_prev_label": "이전 문서",
+    "demo_next_label": "다음 문서"
   }
 }

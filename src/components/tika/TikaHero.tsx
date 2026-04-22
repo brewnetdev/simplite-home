@@ -27,8 +27,8 @@ export default function TikaHero() {
               <span className="badge">Slack · Telegram</span>
             </div>
             <div className={styles.ctas}>
-              <a href="https://github.com/claude-code-expert/tika" target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub에서 보기 →</a>
-              <a href="https://tika-app.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">라이브 데모</a>
+              <a href="https://github.com/claude-code-expert/tika" target="_blank" rel="noopener noreferrer" className="btn btn-primary">{t('hero_cta_github')}</a>
+              <a href="https://tika-app.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">{t('hero_cta_demo')}</a>
             </div>
           </div>
           <div className="win">

@@ -29,7 +29,7 @@ export default function Nav() {
     <nav className="nav">
       <div className="nav-inner">
         <Link href="/" className="brand">
-          <Image src="/assets/simplite-logo-horizontal.svg" alt="Simplite" width={280} height={44} style={{ height: 40, width: 'auto' }} priority />
+          <Image src="/assets/simplite-logo-nav.svg" alt="Simplite" width={360} height={100} style={{ height: 60, width: 'auto' }} priority />
         </Link>
         <div className="nav-links">
           <Link href="/#products">{t('products')}</Link>
