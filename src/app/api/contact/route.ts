@@ -1,5 +1,11 @@
 import { NextResponse } from 'next/server';
-import { appendToSheet } from '@/lib/google-sheets';
+import {
+  buildSalesMessage,
+  buildDevMessage,
+  sendToSlack,
+  type SalesPayload,
+  type DevPayload,
+} from '@/lib/slack';
 
 export async function POST(request: Request) {
   try {
@@ -8,29 +14,9 @@ export async function POST(request: Request) {
     const timestamp = new Date().toISOString();
 
     if (type === 'sales') {
-      const row = [
-        timestamp,
-        data.name || '',
-        data.company || '',
-        data.email || '',
-        data.phone || '',
-        data.products || '',
-        data.size || '',
-        data.plan || '',
-        data.message || '',
-      ];
-      await appendToSheet('Sales', [row]);
+      await sendToSlack(buildSalesMessage(data as SalesPayload, timestamp));
     } else if (type === 'dev') {
-      const row = [
-        timestamp,
-        data.name || '',
-        data.email || '',
-        data.target || '',
-        data.topic || '',
-        data.issue_url || '',
-        data.message || '',
-      ];
-      await appendToSheet('Dev', [row]);
+      await sendToSlack(buildDevMessage(data as DevPayload, timestamp));
     } else {
       return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
     }
