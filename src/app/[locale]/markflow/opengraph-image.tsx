@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
+import { SIMPLITE_LOGO_DATA_URL, SIMPLITE_LOGO_WIDTH, SIMPLITE_LOGO_HEIGHT } from '@/lib/og-logo';
 
-export const runtime = 'edge';
-export const alt = 'MarkFlow — Markdown Knowledge System by Simplite';
+export const alt = 'MarkFlow — Markdown Editor · Markdown Knowledge Management System';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -18,12 +18,19 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '72px 80px',
+          padding: '64px 80px',
           backgroundColor: '#f7f9f7',
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <img
+            src={SIMPLITE_LOGO_DATA_URL}
+            alt="Simplite"
+            width={SIMPLITE_LOGO_WIDTH / 2}
+            height={SIMPLITE_LOGO_HEIGHT / 2}
+            style={{ display: 'block' }}
+          />
           <div
             style={{
               fontSize: '14px',
@@ -50,12 +57,12 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
               fontSize: '22px',
               color: '#3d4a42',
               lineHeight: 1.5,
-              maxWidth: '700px',
+              maxWidth: '760px',
             }}
           >
             {isKo
-              ? '마크다운 듀얼 에디터 · 문서 관계맵 · 원클릭 퍼블리시'
-              : 'Dual editor · Document relation map · One-click publish'}
+              ? '마크다운 에디터 · 마크다운 지식관리 시스템 · 문서 관계맵 · 듀얼 에디터'
+              : 'Markdown Editor · Knowledge Management System · Doc Relation Map · Dual Editor'}
           </div>
         </div>
         <div

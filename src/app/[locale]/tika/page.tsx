@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import TikaHero from '@/components/tika/TikaHero';
 import KanbanDemo from '@/components/tika/KanbanDemo';
@@ -8,7 +9,7 @@ import FinalCta from '@/components/landing/FinalCta';
 
 const BASE_URL = 'https://simplite.net';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'tika' });
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
@@ -17,8 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: 'Tika — Ticket-based Kanban · Simplite',
     description: t('sub'),
     keywords: [
+      '이슈트래커', 'Jira 대체', '온프레미스 설치형 업무 트래킹',
       '칸반보드', '티켓관리', '계층형 티켓', '드래그앤드롭 칸반',
       'Goal Story Feature Task', '번다운 차트', '워크로드', 'WBS 간트',
+      'Issue Tracker', 'Jira Alternative', 'On-premise Self-hosted Work Tracking',
       'kanban board', 'ticket management', 'project management',
     ],
     openGraph: {

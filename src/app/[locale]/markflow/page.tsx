@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import MarkFlowHero from '@/components/markflow/MarkFlowHero';
 import DualEditorDemo from '@/components/markflow/DualEditorDemo';
@@ -9,7 +10,7 @@ import FinalCta from '@/components/landing/FinalCta';
 
 const BASE_URL = 'https://simplite.net';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'markflow' });
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
@@ -18,8 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: 'MarkFlow — Markdown Knowledge System · Simplite',
     description: t('sub'),
     keywords: [
-      '마크다운 지식관리', '듀얼 에디터', '문서 관계맵', '지식 그래프',
-      '마크다운 에디터', 'docx 변환', '문서 퍼블리시',
+      '마크다운 에디터', '마크다운 지식관리 시스템', '온프레미스 설치형 업무 트래킹',
+      '듀얼 에디터', '문서 관계맵', '지식 그래프', '마크다운 지식관리',
+      'docx 변환', '문서 퍼블리시', 'LaTeX 수식', '코드 하이라이트',
+      'Markdown Editor', 'Markdown Knowledge Management System',
+      'On-premise Self-hosted Work Tracking',
       'markdown editor', 'knowledge management', 'document graph',
     ],
     openGraph: {
