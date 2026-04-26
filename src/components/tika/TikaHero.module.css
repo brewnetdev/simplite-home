@@ -1,9 +1,10 @@
 .phero { padding: 64px 0 80px; background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg) 100%); border-bottom: 1px solid var(--line-soft); }
 .pheroInner { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
 .glyph { width: 64px; height: 64px; border-radius: 14px; background: var(--green); color: #fff; font-family: var(--font-serif); font-size: 40px; font-style: italic; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.h1 { font-family: var(--font-sans); font-weight: 700; font-size: clamp(42px, 5vw, 64px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 18px; }
+.logo { width: auto; height: 68px; display: block; margin-bottom: 20px; }
+.h1 { font-family: var(--font-sans); font-weight: 700; font-size: clamp(32px, 3.6vw, 48px); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 18px; }
 .h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--green); }
-.sub { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
+.sub { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; max-width: 520px; min-height: calc(17px * 1.7 * 4); }
 .metaRow { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
 .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .crumb { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; margin-bottom: 20px; }
