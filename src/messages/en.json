@@ -217,7 +217,7 @@
       "message_label": "Details",
       "message_placeholder": "Repro steps, environment, expected vs actual behavior, etc.",
       "submit": "Send message →",
-      "submit_note": "Security issues: send directly to dev@simplite.net",
+      "submit_note": "Security issues: send directly to brewnet.dev@gmail.com",
       "success": "✓ Received. Our engineering team will respond shortly."
     },
     "extra_eyebrow": "Other Channels",

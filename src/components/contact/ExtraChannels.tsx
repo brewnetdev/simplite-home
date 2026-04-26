@@ -6,9 +6,9 @@ export default function ExtraChannels() {
   const t = useTranslations('contact');
 
   const channels = [
-    { key: 'partnership', email: 'partner@simplite.net' },
-    { key: 'press', email: 'press@simplite.net' },
-    { key: 'security', email: 'security@simplite.net' },
+    { key: 'partnership', email: 'brewnet.dev@gmail.com' },
+    { key: 'press', email: 'brewnet.dev@gmail.com' },
+    { key: 'security', email: 'brewnet.dev@gmail.com' },
   ] as const;
 
   return (
