@@ -14,7 +14,9 @@ export default function TikaHero() {
         </div>
         <div className={styles.pheroInner}>
           <div>
-            <div className={styles.glyph}>T</div>
+            <a href="https://tika-app.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Tika website">
+              <Image src="/assets/tika-logo-header.png" alt="Tika" width={76} height={64} className={styles.logo} priority />
+            </a>
             <div className="badge green" style={{ marginBottom: 16 }}>{t('badge')}</div>
             <h1 className={styles.h1}>
               Plan <em>Simply</em>.<br />Ship <em>Boldly</em>.

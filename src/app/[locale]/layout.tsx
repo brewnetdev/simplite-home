@@ -1,3 +1,4 @@
+import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,6 +8,16 @@ import { jetbrainsMono } from '@/lib/fonts';
 import Nav from '@/components/layout/Nav';
 import Footer from '@/components/layout/Footer';
 import '@/styles/globals.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://simplite.net'),
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#1a3a2e',
+};
 
 export default async function LocaleLayout({
   children,
@@ -40,7 +51,6 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
         <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon-192.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#1a3a2e" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

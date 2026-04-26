@@ -1,13 +1,14 @@
 import { ImageResponse } from 'next/og';
+import { getSimpliteLogo, SIMPLITE_LOGO_WIDTH, SIMPLITE_LOGO_HEIGHT } from '@/lib/og-logo';
 
-export const runtime = 'edge';
-export const alt = 'Tika — Ticket-based Kanban by Simplite';
+export const alt = 'Tika — Ticket-based Kanban · Issue Tracker · Jira Alternative';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function OgImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const isKo = locale === 'ko';
+  const logoSrc = await getSimpliteLogo();
 
   return new ImageResponse(
     (
@@ -18,12 +19,19 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '72px 80px',
+          padding: '64px 80px',
           backgroundColor: '#f7f9f7',
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <img
+            src={logoSrc as unknown as string}
+            alt="Simplite"
+            width={SIMPLITE_LOGO_WIDTH / 2}
+            height={SIMPLITE_LOGO_HEIGHT / 2}
+            style={{ display: 'block' }}
+          />
           <div
             style={{
               fontSize: '14px',
@@ -50,12 +58,12 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
               fontSize: '22px',
               color: '#3d4a42',
               lineHeight: 1.5,
-              maxWidth: '700px',
+              maxWidth: '760px',
             }}
           >
             {isKo
-              ? '목표 중심의 계층형 칸반 · Goal → Story → Feature → Task'
-              : 'Hierarchical kanban · Goal → Story → Feature → Task'}
+              ? '이슈트래커 · Jira 대체 · 온프레미스 설치형 업무 트래킹 · 계층형 칸반'
+              : 'Issue Tracker · Jira Alternative · On-premise Work Tracking · Hierarchical Kanban'}
           </div>
         </div>
         <div

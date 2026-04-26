@@ -14,7 +14,6 @@ export default function HeroSection() {
             <span className="eyebrow">{t('eyebrow')}</span>
             <h1 className={styles.h1}>
               <span className={styles.em}>{t('title1')}</span>
-              <span className={styles.rust}>.</span>
               <br />
               {t('title2')}
               <br />

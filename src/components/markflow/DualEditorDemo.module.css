@@ -2,6 +2,11 @@
 .dualBar { background: #fbfcfb; border-bottom: 1px solid var(--line-soft); padding: 12px 20px; display: flex; gap: 12px; align-items: center; }
 .tabs { display: flex; gap: 8px; margin-left: auto; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; }
 .tabs span { padding: 4px 10px; border-radius: 4px; background: var(--green-soft); color: var(--green); }
+.featRow { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 14px; }
+.tagline { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--green); margin: 0 0 24px; }
+.shot { border: 1px solid var(--green); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; }
+.shotBar { background: #fbfcfb; border-bottom: 1px solid var(--line-soft); padding: 12px 20px; display: flex; gap: 12px; align-items: center; }
+.url { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.05em; }
 .dualGrid { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
 .dualCol { padding: 20px 24px; }
 .editor { border-right: 1px solid var(--line-soft); background: #fdfdfc; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75; color: var(--ink-soft); }

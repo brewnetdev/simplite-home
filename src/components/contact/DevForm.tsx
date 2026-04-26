@@ -41,7 +41,7 @@ export default function DevForm() {
         <p>{t('desc')}</p>
         <div className={styles.quick}>
           <h5>Direct Channels</h5>
-          <a href="mailto:dev@simplite.net"><span>Dev Contact</span><span className={styles.mono}>dev@simplite.net</span></a>
+          <a href="mailto:brewnet.dev@gmail.com"><span>Dev Contact</span><span className={styles.mono}>brewnet.dev@gmail.com</span></a>
           <a href="https://github.com/claude-code-expert/tika" target="_blank" rel="noopener noreferrer"><span>Tika Issues</span><span className={styles.mono}>github ↗</span></a>
           <a href="https://github.com/claude-code-expert/markflow" target="_blank" rel="noopener noreferrer"><span>MarkFlow Issues</span><span className={styles.mono}>github ↗</span></a>
         </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import HeroSection from '@/components/landing/HeroSection';
 import LogoStrip from '@/components/landing/LogoStrip';
@@ -11,7 +12,7 @@ import RoadmapSection from '@/components/landing/RoadmapSection';
 
 const BASE_URL = 'https://simplite.net';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
@@ -20,9 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: 'Simplite. — ' + t('subtitle'),
     description: t('description'),
     keywords: [
-      '칸반보드', '티켓관리', '마크다운 지식관리', '오픈소스 업무도구',
+      '마크다운 에디터', '이슈트래커', 'Jira 대체', '온프레미스 설치형 업무 트래킹',
+      '마크다운 지식관리 시스템', '칸반보드', '티켓관리', '오픈소스 업무도구',
       'MCP AI', '온프레미스', '계층형 티켓', '드래그앤드롭 칸반',
       '듀얼 에디터', '문서 관계맵', 'AI 자동화', 'SSO RBAC', 'Apache 2.0',
+      'Markdown Editor', 'Issue Tracker', 'Jira Alternative',
+      'On-premise Self-hosted Work Tracking', 'Markdown Knowledge Management System',
       'kanban board', 'ticket management', 'markdown knowledge', 'open source',
     ],
     openGraph: {
