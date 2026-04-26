@@ -217,7 +217,7 @@
       "message_label": "상세 내용",
       "message_placeholder": "재현 단계, 환경, 예상 동작 vs 실제 동작 등",
       "submit": "메시지 보내기 →",
-      "submit_note": "보안 이슈는 dev@simplite.net 직접 발송 권장",
+      "submit_note": "보안 이슈는 brewnet.dev@gmail.com 직접 발송 권장",
       "success": "✓ 접수되었습니다. 기술팀이 곧 회신드립니다."
     },
     "extra_eyebrow": "Other Channels",

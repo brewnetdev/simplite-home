@@ -41,7 +41,7 @@ export default function SalesForm() {
         <p>{t('desc')}</p>
         <div className={styles.quick}>
           <h5>Direct Channels</h5>
-          <a href="mailto:sales@simplite.net"><span>Sales</span><span className={styles.mono}>sales@simplite.net</span></a>
+          <a href="mailto:brewnet.dev@gmail.com"><span>Sales</span><span className={styles.mono}>brewnet.dev@gmail.com</span></a>
           <a href="#"><span>Slack Community</span><span className={styles.mono}>join →</span></a>
           <a href="#"><span>전화 상담 예약</span><span className={styles.mono}>book →</span></a>
         </div>
