@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   formatDetection: { telephone: false, email: false, address: false },
+  verification: {
+    other: {
+      'naver-site-verification': '35251e07ac824e47f6e0559f6eb4c9607e8bc3ba',
+    },
+  },
 };
 
 export const viewport: Viewport = {
