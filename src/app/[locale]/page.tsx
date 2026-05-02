@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
 
   return {
-    title: 'Simplite. — ' + t('subtitle'),
+    title: { absolute: 'Simplite — ' + t('subtitle') },
     description: t('description'),
     keywords: [
       '마크다운 에디터', '이슈트래커', 'Jira 대체', '온프레미스 설치형 업무 트래킹',
@@ -41,10 +41,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image' as const,
       title: 'Simplite. — ' + t('subtitle'),
       description: t('description'),
+      images: [`${BASE_URL}/${locale}/opengraph-image`],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
-      languages: { ko: `${BASE_URL}/ko`, en: `${BASE_URL}/en` },
+      languages: {
+        ko: `${BASE_URL}/ko`,
+        en: `${BASE_URL}/en`,
+        'x-default': `${BASE_URL}/ko`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
   };
 }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
 
   return {
-    title: 'Tika — Ticket-based Kanban · Simplite',
+    title: 'Tika — Ticket-based Kanban',
     description: t('sub'),
     keywords: [
       '이슈트래커', 'Jira 대체', '온프레미스 설치형 업무 트래킹',
@@ -36,22 +36,33 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image' as const,
       title: 'Tika — Ticket-based Kanban · Simplite',
       description: t('sub'),
+      images: [`${BASE_URL}/${locale}/tika/opengraph-image`],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/tika`,
-      languages: { ko: `${BASE_URL}/ko/tika`, en: `${BASE_URL}/en/tika` },
+      languages: {
+        ko: `${BASE_URL}/ko/tika`,
+        en: `${BASE_URL}/en/tika`,
+        'x-default': `${BASE_URL}/ko/tika`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
   };
 }
 
-export default function TikaPage() {
+export default async function TikaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Simplite', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/#products` },
-      { '@type': 'ListItem', position: 3, name: 'Tika', item: `${BASE_URL}/ko/tika` },
+      { '@type': 'ListItem', position: 1, name: 'Simplite', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/${locale}#products` },
+      { '@type': 'ListItem', position: 3, name: 'Tika', item: `${BASE_URL}/${locale}/tika` },
     ],
   };
 

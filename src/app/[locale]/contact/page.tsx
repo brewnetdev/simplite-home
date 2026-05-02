@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
 
   return {
-    title: t('title') + ' — Simplite.',
+    title: t('title'),
     description: t('desc'),
     keywords: [
       'Simplite 문의', '도입 상담', '기술 지원', '파트너십', '언론 문의',
@@ -32,21 +32,32 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image' as const,
       title: t('title') + ' — Simplite.',
       description: t('desc'),
+      images: [`${BASE_URL}/${locale}/contact/opengraph-image`],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/contact`,
-      languages: { ko: `${BASE_URL}/ko/contact`, en: `${BASE_URL}/en/contact` },
+      languages: {
+        ko: `${BASE_URL}/ko/contact`,
+        en: `${BASE_URL}/en/contact`,
+        'x-default': `${BASE_URL}/ko/contact`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
   };
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Simplite', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Contact', item: `${BASE_URL}/ko/contact` },
+      { '@type': 'ListItem', position: 1, name: 'Simplite', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: `${BASE_URL}/${locale}/contact` },
     ],
   };
 

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ogLocale = locale === 'ko' ? 'ko_KR' : 'en_US';
 
   return {
-    title: 'MarkFlow — Markdown Knowledge System · Simplite',
+    title: 'MarkFlow — Markdown Knowledge System',
     description: t('sub'),
     keywords: [
       '마크다운 에디터', '마크다운 지식관리 시스템', '온프레미스 설치형 업무 트래킹',
@@ -38,22 +38,33 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image' as const,
       title: 'MarkFlow — Markdown Knowledge System · Simplite',
       description: t('sub'),
+      images: [`${BASE_URL}/${locale}/markflow/opengraph-image`],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/markflow`,
-      languages: { ko: `${BASE_URL}/ko/markflow`, en: `${BASE_URL}/en/markflow` },
+      languages: {
+        ko: `${BASE_URL}/ko/markflow`,
+        en: `${BASE_URL}/en/markflow`,
+        'x-default': `${BASE_URL}/ko/markflow`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
   };
 }
 
-export default function MarkFlowPage() {
+export default async function MarkFlowPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Simplite', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/#products` },
-      { '@type': 'ListItem', position: 3, name: 'MarkFlow', item: `${BASE_URL}/ko/markflow` },
+      { '@type': 'ListItem', position: 1, name: 'Simplite', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/${locale}#products` },
+      { '@type': 'ListItem', position: 3, name: 'MarkFlow', item: `${BASE_URL}/${locale}/markflow` },
     ],
   };
 
