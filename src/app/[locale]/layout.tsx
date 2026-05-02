@@ -11,6 +11,27 @@ import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://simplite.net'),
+  title: {
+    template: '%s · Simplite',
+    default: 'Simplite — 쉽게 쓰고, 효율적으로 해내다',
+  },
+  applicationName: 'Simplite',
+  authors: [{ name: 'Simplite Team', url: 'https://simplite.net' }],
+  creator: 'Simplite Team',
+  publisher: 'Simplite',
+  generator: 'Next.js',
+  category: 'technology',
+  icons: {
+    icon: [
+      { url: '/assets/simplite-favicon.svg', type: 'image/svg+xml' },
+      { url: '/assets/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/assets/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/assets/favicon-64.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: [{ url: '/assets/favicon-192.png', sizes: '192x192', type: 'image/png' }],
+  },
+  manifest: '/site.webmanifest',
+  formatDetection: { telephone: false, email: false, address: false },
 };
 
 export const viewport: Viewport = {
@@ -46,16 +67,14 @@ export default async function LocaleLayout({
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/svg+xml" href="/assets/simplite-favicon.svg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-        <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon-192.png" />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
+        <a href="#main-content" className="skip-to-content">
+          {locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}
+        </a>
         <NextIntlClientProvider messages={messages}>
           <Nav />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>{children}</main>
           <Footer />
         </NextIntlClientProvider>
         {process.env.NODE_ENV === 'development' && (
